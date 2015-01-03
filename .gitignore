@@ -13,7 +13,6 @@
 *.css
 *.css.map
 *.map
-*.idea
 *~
 # OS or Editor folders
 .DS_Store
