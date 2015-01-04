@@ -912,14 +912,18 @@
 </div>
 
 <p>vertical-align的渲染只与父标签有关，与子元素没有直接关系</p>
+
 <div id="D-150103-4"><span class="txt"><img src="../images/footer1.jpg" alt=""/>哈哈<span class="dot"></span></span></div>
 
 <div id="D-150103-5">
     <p>不论是letter-scacing撑开的文字还是word-spacing撑开的文字，每一行的文字都在各自的行盒下，可以通过背景颜色看出来</p>
+
     <div class="cnt">哈哈哈哈哈哈哈哈哈</div>
     <p>注:英文字母之间有word-spacing而中文之间没有</p>
+
     <div class="cnt2">hello world hello world hello world</div>
     <p>letter-spacing不可以改变inline-block元素间的间距，而word-spacing可以</p>
+
     <div class="cnt3">
         <div></div>
         <div></div>
@@ -931,12 +935,14 @@
         <div></div>
     </div>
     <p>letter-spacing可以改变文字之间的间距，但不能改变inline元素之间的间距，inline元素不能当成letter来解析</p>
+
     <div class="cnt5">
         <span>哈</span>
         <span>哈</span>
     </div>
     <p>word-spacing可以改变inline元素之间的间距，word-spacing既可以把英文单词当做word解析，也可以把inline当成word解析，当然上面也
-    试验过，inline-block也是可以当成word解析的，也就是说，一个行内元素实际上是被当成一个word来解析的，至少从文本之间的间距角度来看是如此的</p>
+        试验过，inline-block也是可以当成word解析的，也就是说，一个行内元素实际上是被当成一个word来解析的，至少从文本之间的间距角度来看是如此的</p>
+
     <div class="cnt6">
         <span>哈哈哈</span>
         <span>哈哈哈</span>
@@ -944,6 +950,87 @@
         <span>hello wordld</span>
         <span>哈哈哈</span>
         <span>hello wordld hello word</span>
+    </div>
+</div>
+
+<div id="D-150104-1">
+    <p>两个inline-block元素，vertical-align:middle，行高为父元素所给，cnt可以垂直居中</p>
+    <div class="g-wrap">
+        <span class="cnt">哈哈哈哈哈哈哈哈</span><i class="blank">&nbsp;</i>
+    </div>
+    <p>只有cnt一个inline-block元素，vertical-align：middle，行高为父元素所给，没有那个包含空格的元素，元素可以垂直居中</p>
+    <div class="g-wrap">
+        <span class="cnt">哈哈哈哈哈哈哈哈</span>
+    </div>
+    <p>两个display:inline-block元素，没有设置vertical-align:middle，行高为父元素所给，元素可以垂直居中</p>
+    <div class="g-wrap">
+        <span class="cnt2">哈哈哈哈哈哈哈哈</span><i class="blank2">&nbsp;</i>
+    </div>
+    <p>一个display:inline-block元素，没有设置vertical-align:middle，行高为父元素所给，元素可以垂直居中</p>
+    <div class="g-wrap">
+        <span class="cnt2">哈哈哈哈哈哈哈哈</span>
+    </div>
+    <p>inline-block元素必须必须设置一个vertical-align:middle才能类似的表现的像word一样，上面的没有设置vertical-align
+        :middle而居中了只是一个巧合。但跟inaline元素以及文本还是不同，因为inline元素以及文本的vertical-align值是baseline的，
+        而inline-block元素默认的vertical-align值baseline是无法让元素垂直居中的，那么前面有两个实例是在值为默认baseline的情况下
+        垂直居中的，那又是为什么呢</p>
+    <div class="g-wrap2">
+        <span class="cnt1">
+            <a href="">哈哈</a>
+            <span class="cnt2"></span>
+        </span>
+    </div>
+    <p>一个inline-block元素，如果设置了line-height而元素里面没有实际的节点的话，是撑不开这个inline-block元素的高度的，而且这个
+        line-height也不会改变元素所在行盒的line-height，因为元素的line-height是作用于元素里面的行盒的，而这个inline-block元素此时
+    本身里面没有了可作用的行盒，所以撑不开元素高度</p>
+    <div style="width: 100%; height: 200px; font-size: 0;">
+        <div style="line-height:200px; width: 50px; display: inline-block;"></div>
+    </div>
+    <p>反之，只要在元素里面加一个空白的文本节点nbsp;（经我测试，直接一个空格是不行的，必须加一个nbsp;)，让其里面拥有一个行盒，就OK了，这个行盒里面的文字大小可以为0，因为撑开元素高度的不是
+    文字，而是行盒的高度line-height</p>
+    <div style="width: 100%; height: 200px; font-size: 0;">
+        <div style="line-height:200px; width: 50px; display: inline-block;">&nbsp;</div>
+    </div>
+    <p>行盒与内容节点公用水平中垂线</p>
+    <div style="width: 100%; text-align: center; line-height: 100px;">哈哈哈哈哈哈哈哈哈哈<a href="">哈哈哈</a></div>
+    <p>行盒的最终表现是通过行内盒实现的，无论哪个line-height值是最外层的父元素行盒给的还是通过直接给行内盒给的，其实质上都给给的
+        子元素行高，而从没有给过行盒行高，这也进一步解释了上面那个inlineblock需要一个空白的文本节点才能拥有高度</p>
+    <div style="width: 100%; text-align: center;">哈哈哈哈哈哈哈哈哈哈<a style="line-height: 100px;" href="">哈哈哈</a></div>
+    <p>继续研究上面的那个问题，为什么没有设置vertical-align:middle有时候能居中有时候不能，先排除其他可能性，看看一个空的inline-block
+        元素时的情况，此时父元素给了这个元素所在行盒一个300px的line-height，然后元素此时的vertical-align值为默认值baseline，元素没有
+    居中显示</p>
+    <div class="g-wrap">
+        <span class="cnt3"></span>
+    </div>
+    现在在元素里面加点文字，先加两个文字
+    <div class="g-wrap">
+        <span class="cnt3" style="line-height: 1.5; font-size: 18px;">哈哈</span>
+    </div>
+    然后再增加两个文字
+    <div class="g-wrap">
+        <span class="cnt3" style="line-height: 1.5; font-size: 18px;">哈哈哈哈</span>
+    </div>
+    现在增加到8个，元素此时看上去是居中了，说明一个问题，在没有设置vertical-align:middle值时，元素之所以居中，完全是因为里面的文字
+    的出现，而且还必须增加到一定的数量才行，确实是因为文字的原因吗
+    <div class="g-wrap">
+        <span class="cnt3" style="line-height: 1.5; font-size: 18px;">哈哈哈哈哈哈哈哈</span>
+    </div>
+    现在去掉行内盒行高，将其设置为0看看是什么情况，可以看到元素没有居中了，因此说明行盒的高度是一方面原因，而且这个高度还是到了一定的
+    值的原因才让它居中的，因此说明上面那个元素在没有设置vertical-align；middle值时的居中纯属一个巧合，那为什么元素的行盒高度会
+    影响元素在父元素中垂直方向上的排列呢？
+    <div class="g-wrap">
+        <span class="cnt3" style="line-height: 0; font-size: 18px;">哈哈哈哈哈哈哈哈</span>
+    </div>
+    还看看字体方面会不会有原因，现在我将元素的font-size值增大，当font-size值增大到151px时元素看上去是居中了，这里我明明将line-height值设置为0了，按道理元素
+    里面行盒的高度设置为0了啊，说明字体也是会影响元素在垂直方向的位置的，现在先假设这样一条公理，先不去验证其正确与否：“行盒与
+    行内盒始终是公用一条水平中垂baseline线的”，下面的推理依据这条原理。在没有给元素字体大小时，元素此时的baseline线正好在如下面第二个示例
+    所处位置，也就是说这是元素默认的baseline的位置，现在将元素字体增大，元素baseline线也跟着一起往上移动，到达一定值后，也就居中了，当然
+    这个解释还算不上解释，因为还是没搞清楚baseline那条线为什么会往上移。具体原因这个日后解释
+    <div class="g-wrap">
+        <span class="cnt3" style="line-height: 0; font-size: 151px;">哈哈哈哈哈哈哈哈</span>
+    </div>
+    <div class="g-wrap">
+        <span class="cnt3" style="line-height: 0; font-size: 0;">哈哈哈哈哈哈哈哈</span>
     </div>
 </div>
 
