@@ -888,3 +888,47 @@ function consoleLog(Content) {
 //    console.log(numArr);
 //
 //})();
+
+//(function(){
+//    var target = document.getElementById("D-150104-4");
+//    target.onclick = function(){
+//        //window.open("../html/practice-bootstrap.html");
+//        window.open("#D-150104-1","_self");
+//        window.close();
+//    };
+//    var bdr = document.getElementById("D-150104-5").getElementsByTagName("a")[0];
+//    bdr.style.borderRightColor = "#000000";
+//})();
+
+//(function(){
+//    var ele1 = document.getElementById("D-150113-1");
+//    ele1.addEventListener("click",function(){
+//        var newNode = document.createElement("div");
+//        var returnNode = this.appendChild(newNode);
+//        consoleLog(returnNode);
+//    });
+//    consoleLog(document.domain);
+//})();
+
+//(function(){
+//    document.onclick = function(){
+//        window.close();
+//    }
+//})();
+
+//(function(){
+//    var ele= document.getElementById("D150120-1");
+//    //consoleLog(ele.getAttribute("style"));
+//    consoleLog(ele.style);
+//})();
+
+//(function(){
+//    var ele = document.getElementById("D-150121-2").getElementsByTagName("img")[0];
+//    //attributes属性能够返回自定义的属性
+//    ele.setAttribute("aaa","aaa");
+//    ele.setAttribute("width","100px");
+//    var len = ele.attributes;
+//    consoleLog(len);
+//    //getAttribute方法也能返回自定义的属性
+//    consoleLog(ele.getAttribute("bbb"));
+//})();

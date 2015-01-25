@@ -1034,7 +1034,300 @@
     </div>
 </div>
 
+<div id="D-150104-2">
+    <div class="cnt_wrap"><span class="cnt">哈哈哈哈哈哈哈哈哈哈哈哈</span></div>
+</div>
+<div id="D-150104-3">
+    <p>word-spacing对于inline-block元素是起作用的，将其定义在inline-block元素的父级上即可，但是有一点是需要注意的，由于浏览器把
+    inline-block元素当成了word来解析，而浏览器识别何为何不为word的标志便是word之间的空白，不同的word是通过空格来隔开的，而其它的
+    诸如逗号或者添加通过添加空的标签都是不行的，而这个空格可以是键盘上的一个空格，也可以是nbsp;包含空格的方式可以直接把空格写在元
+        素后面或者换行或者添加一个包含空格标签，虽然换行可以直接解决问题，但是为了保证在后端那里能万无一失，最
+    好通过js去添加一个空格</p>
+    <div class="cnt_wrap">
+        <div class="cnt">1</div>&nbsp;<div class="cnt">2</div>&nbsp;<div class="cnt">3</div>
+    </div>
+    <p>下面这个是在inline-block元素之间添加了一个width和height都为0的包含了空格inline-block元素，但width为0是不行的</p>
+    <div class="cnt_wrap">
+        <div class="cnt">4</div><div style="width:0; height:0; overflow: hidden; display: inline-block; font-size: 0;">&nbsp;</div><div class="cnt">5</div>
+    </div>
+    <p>上面的示例为什么width为0时不行呢，通过查看下面这个示例中div在控制台中计算出的大小可以发现，div的宽度变成了100px</p>
+    <div class="cnt_wrap">
+        <div class="cnt">4</div><div style="display: inline-block; font-size: 0;">&nbsp;</div><div class="cnt">5</div>
+    </div>
+    <p>然后这里为什么div的宽度被撑开为100px了呢，是不是word-spacing是作用在空格上面的呢，现在将空格的font-size设置为36px，可以看到
+    div的宽度增加了变成了118px，高度是41px，这也就能解释为什么div的width为0时不起作用了，因为那个元素之间的间距是通过在空格上添加
+    word-spacing然后让那个div变宽然后把元素挤开的，然后现在在想想那么inline-block元素之间的word-spacing是不是也是不是元素本身之间的word-spacing
+    呢</p>
+    <div class="cnt_wrap">
+        <div class="cnt">4</div><div style="display: inline-block; font-size: 36px;">&nbsp;</div><div class="cnt">5</div>
+    </div>
+</div>
+
+<!--<script type="text/javascript">-->
+    <!--setTimeout(function(){-->
+        <!--document.write("<strong>哈哈哈哈哈</strong>");-->
+    <!--},5000);-->
+<!--</script>-->
+
+<div id="D-150104-4" style="width: 100%; height: 50px; cursor: pointer; font-size: 18px; text-align: center; line-height: 50px;">
+    在div上绑定了一个href，相当于是个a链接了，点击见效
+</div>
+<div id="D-150104-5" style="overflow: auto;">
+    <a href="" style="border:50px solid;text-decoration: line-through; color: #FF0000; font-size:36px;">哈哈哈哈哈哈</a>
+</div>
+<div id="D-150106-1">
+    <div class="wrap"><div class="cnt"></div></div>
+</div>
+<div id="D-150107-1">
+    <div class="cnt"></div>
+</div>
+<div id="D-150107-2">
+    <div class="cnt" data-hasbgclr="false"></div>
+</div>
+<div id="D-150108-1">
+    <div class="cnt">文本依旧围绕着直角时的剩余空间进行环绕</div>
+    <p>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+</div>
+<div id="D-150108-2">
+    <p>从一个固定值过渡到一个实际长度比它大的auto值使用max-width和max-height去模拟</p>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <p>从一个固定值过渡到一个实际长度比它小的auto值使用min-width和min-height去模拟</p>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <p>从auto值过渡到一个固定的比它大的值，使用min-width和min-height属性</p>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <p>从auto值过渡到一个固定的比它小的值，使用max-width和max-height属性</p>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+</div>
+<div id="D-150111-1">
+    <div class="wrap">
+        <div class="cnt"></div><div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <div class="wrap">
+        <div style="width:100%; height: 100px; font-size: 38px;">asdfasf哈哈哈</div>
+    </div>
+    <p>通过观察上面两个实例可以发现，如果inline-block元素是被当成letter来解析而撑开的话，那么上面第一个例子中的第一和第二两个元素
+    之间就不会紧挨在一起了，为什么紧挨在一起就证明了不是当做letter来解析的呢，因为从第二个实例可以看出，文字之间是没有空隙的，而他们
+    之间撑开了 ，那word-spacng呢</p>
+</div>
+<div id="D-150111-2">
+    <div class="wrap">
+        <div class="cnt"></div><div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <div class="wrap">
+        <div style="width:100%; height: 100px; font-size: 38px;">asdfasf哈哈哈 asdfasf哈哈哈 asdfa sf 哈哈 哈</div>
+    </div>
+    <p>根据上面的现象结合以前做的一些实验可以猜测word-spacing可能作用于inline-block元素之间的空白上或者文字之间的空白上，那到底是
+        不是呢</p>
+    <div class="wrap">
+        <div class="cnt"></div>
+        <div class="cnt"></div>
+    </div>
+    <div class="wrap" style="font-size: 0;"> <div class="cnt"></div> <div class="cnt"></div> </div>
+    <p>把font-size设置为0了，也就是说那个空格的大小为0了，而且元素之间的间距减小了一点点了，但是还是不能证明word-spacing是作用在
+    空格上的，这个问题绕过去绕过来，似乎是无解的</p>
+</div>
+<div id="D-150111-3">
+    <p>设置circle at center值时，首先是元素默认的结束形状大小是farthest-corner，同时此时元素默认的半径就是此时farthest-side所在边
+    距离圆心的距离</p>
+    <div class="wrap">
+        <div class="cnt"></div>
+    </div>
+    <div class="wrap">
+        <div class="cnt cnt2"></div>
+    </div>
+    <div class="wrap">
+        <div class="cnt cnt3"></div>
+    </div>
+    <div class="wrap">
+        <div class="cnt cnt4"></div>
+    </div>
+    <div class="wrap">
+        <div class="cnt cnt5"></div>
+    </div>
+    <div class="wrap">
+        <p>color-stop的百分比长度值是相对于background-size而言的</p>
+        <div class="cnt cnt6"></div>
+    </div>
+</div>
+<div id="D-150113-1">
+    <div class="wrap" data-hasbgclr="false"></div>
+    <p> TIP：background-image中的color值，在sass中有可能因为设置的不正确，而无论你的原始color值是什么类型，最终生成的都是colorName
+    值</p>
+    <div class="wrap" data-hasbgclr="false"></div>
+    <div class="wrap" data-hasbgclr="false"></div>
+    <div class="wrap" data-hasbgclr="false"></div>
+    <p>在没有设置初始颜色的情况下，从开始处到有设置颜色的第一个点之间不会产生颜色过渡</p>
+    <div class="wrap" data-hasbgclr="false"></div>
+    <div class="wrap" data-hasbgclr="false"></div>
+    <div class="wrap" data-hasbgclr="false"></div>
+    <p>最后一个终止颜色如果是设置在小于100%的位置的，而在它之后却没有设置断点颜色，那么从那个点开始直到100%位置都是没有颜色
+        渐变的</p>
+    <div class="wrap" data-hasbgclr="false"></div>
+</div>
+<div id="D-150115-1">
+    <div class="wrap">
+        <div class="spin"></div>
+    </div>
+</div>
+<div id="D-150115-2">
+    <div class="wrapper w2" data-hasbgclr="false">
+        <div class="cube" data-hasbgclr="false">
+            <div class="side front" data-hasbgclr="false">1</div>
+            <div class="side back" data-hasbgclr="false">6</div>
+            <div class="side right" data-hasbgclr="false">4</div>
+            <div class="side left" data-hasbgclr="false">3</div>
+            <div class="side top" data-hasbgclr="false">5</div>
+            <div class="side bottom" data-hasbgclr="false">2</div>
+        </div>
+    </div>
+    <div class="wrapper w1" data-hasbgclr="false">
+        <div class="cube" data-hasbgclr="false">
+            <div class="side front" data-hasbgclr="false">1</div>
+            <div class="side back" data-hasbgclr="false">6</div>
+            <div class="side right" data-hasbgclr="false">4</div>
+            <div class="side left" data-hasbgclr="false">3</div>
+            <div class="side top" data-hasbgclr="false">5</div>
+            <div class="side bottom" data-hasbgclr="false">2</div>
+        </div>
+    </div>
+</div>
+<div id="D-150117-1">
+    <p>拥有perspective属性的父元素有一个perpective-origin，元素默认的origin在父元素center位置，当perspective属性值为1px时，viewport
+    的视角相当于是在x轴和y轴0点处视线朝向x轴正方向，随着perspective属性值的不断增大，类似于一个视角围绕着子元素的一个往Z轴正方向的
+    一个圆周运动，而这个圆周运动的最大顶点处便是与Z轴正方向呈0deg处，与元素垂直90度位置，这个点上看上去元素是平的，而当perspective-origin
+    设不同值时，指定的其实是那个与Z轴平行的与元素垂直的那跟线的位置，如果是left那那根线在左边中间位置直立，如果是center，则在元素
+    中间直立，如果是righ，则在右边中间直立。另外的视角的0点也要根据子元素的具体的transform值来，比如元素rotateY(45deg)时，其实元素
+    的视角的0点还是在之前没有旋转之前的那个点位置，也就是说视角的0点值是元素本身没有做transform下的0点值</p>
+    <div class="wrap">
+        <div class="cnt" data-hasbgclr="false"></div>
+    </div>
+</div>
+<div id="D-150118-1">
+    <p style="word-break: break-all; word-wrap: break-word;">
+        w3.org(link: http://www.w3.org/TR/CSS2/visudet.html#propdef-line-height)有这样一段原文：
+        "If the inline box contains no glyphs at all, it is considered to contain a strut (an invisible glyph of zero width)
+        with the A and D of the element's first available font"
+        意思就是：
+        1、如果一个inline-box中总是不包含任何字符，浏览器会自动的给你包含一个带有A和B的作为inline-box下的第一个有效的字符
+        的strut进去（一个不可见的0宽度的字符）（至于A和B是什么，具体参阅相关链接）。也就是说，浏览器会给一个不包含任何字符的inline-box
+        包含一个宽高都为0的行盒进去，而行盒包含一个字体大小为0的不可见字符。因此在这里当你给span设置font-size:100px时会看到span变高
+        ,不能变宽，但是不知道为什么必须给它border或padding才能撑开它的高度，如果按照不给它padding或border字体就会冲破inline-box的
+        限制的说法，那在有文本节点时为什么却能够撑开它的高度呢，或许可以这样理解，没有border或padding的inline-box中的空的
+        invisible font会冲破inline-box的限制出去，从而inline-box无法获得高度。此时的invisible font的line-height就等于font本身的大小
+        值，
+        2、这个invisible-font是一个虚拟的DOM节点，用first-letter或者first-line是选不中的
+    </p>
+    <div class="wrap">
+        <span class="cnt"></span>
+    </div>
+    <div class="wrap">
+        <span>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+        <p style="word-wrap: break-word; word-break: break-all;">Although margins, borders, and padding of non-replaced elements do not enter into the line box calculation, they
+            are still rendered around inline boxes. This means that if the height specified by 'line-height' is less than
+            the content height of contained boxes, backgrounds and colors of padding and borders may "bleed" into adjoining
+            line boxes.</p>
+        <span>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span><br>
+        <span style="padding-top: 10px; padding-bottom: 10px; font-size: 26px; background:#FF0000; color: #000000;" data-hasbgclr="false">噢噢噢噢哦哦哦哦哦哦</span>
+        <p>利用上面这个特性可以做点小东西，一个等高效果：</p>
+        <div style="overflow: hidden; margin-left: auto; margin-right: auto; width: 400px; padding-bottom: 30px;
+        font-size: 0; letter-spacing:-0.307em;" id="D150120-1">
+            <span style="padding-bottom: 800px; padding-left: 100px; line-height:1; font-size: 100px; background: url(../images/11.png) repeat-y;"></span>
+            <span style="padding-bottom: 800px; padding-left: 100px; line-height:1; font-size: 100px; background: url(../images/11.png) repeat-y;"></span>
+        </div>
+
+    </div>
+</div>
+
+<div id="D-150120-1">
+    <p>元素旋转后，默认是可以看的到元素正面的图像的，但是通过设置backface-visibility:hidden可以让元素旋转后正面不可见，背面本
+        身不带图像，因此也就什么都看不到了</p>
+    <div class="wrap">
+        <div class="item"></div>
+    </div>
+</div>
+
+<div id="D-150121-1">
+    <div class="container">
+        <div class="cube backface-visibility-visible">
+            <div class="side front">1</div>
+            <div class="side back">2</div>
+            <div class="side right">3</div>
+            <div class="side left">4</div>
+            <div class="side top">5</div>
+            <div class="side bottom">6</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="cube backface-visibility-hidden">
+            <div class="side front">1</div>
+            <div class="side back">2</div>
+            <div class="side right">3</div>
+            <div class="side left">4</div>
+            <div class="side top">5</div>
+            <div class="side bottom">6</div>
+        </div>
+    </div>
+
+</div>
+
+<div id="D-150121-2">
+    <img src="../images/11.png" alt="" width="319" height="280" style="margin-left: auto;margin-right: auto;display: block;" class="wrap"/>
+</div>
+
+<div id="D-150124-1">
+    <img src="../images/11.png" alt="" width="319" height="280" style="margin-left: auto;margin-right: auto;display: block;" class="wrap"/>
+</div>
+
+<div id="D-150125-1">
+    <div class="wrap"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
 </body>
 </html>
+<!--<script src="../js/jquery-1.9.1.min.js"></script>-->
 <script src="../js/product-bgcolor.js"></script>
 <script src="../js/practice-1.js"></script>
