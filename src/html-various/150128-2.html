@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        html,body{
+            margin: 0;
+        }
+        html{
+            background-color: #000000;
+        }
+        body{
+            width: 600px;
+            height: 400px;
+            background-color: #ff4400;
+        }
+        .m-demo{
+            width: 400px;
+            height: 800px;
+            background-color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="m-demo">
+        此时，body的高为400px，而它里面的m-demo的高为800px，如果说，元素超出body，body会显示滚动条的话，那么按道理，元素的高度在
+        body和html的高度之间时，body会显示滚动条，而当我把元素高度设置为500px时，结果是页面上没有任何滚动条产生，而在大于body的高度小于
+        html的高度时，滚动条产生了，那么这个滚动条就有可能是在html上产生的，但是通过查看浏览器的cmputed-style可以发现，html的默认
+            overflow值是visible的，所以按道理也不太可能是html上的滚动条，那么会不会是m-demo的高度增加后，撑高了html的高度，然后html超出
+        document的高度，致使document产生的滚动条呢，当我把m-demo注释掉后，将html的高度设置为800px时，滚动条产生了，也就是只要html超出了
+        document的高度，就会产生滚动条，经测试，横向也是如此。因此或许可以得出一个结论，滚动条是在document上产生的，而document默认高宽
+        都是fullscreen的。然后我在浏览器控制台里console.log(document)，控制台里出来了一个#document，然后我移上去视图让其高亮出所在区域，
+        其结果是document的高宽都是Fullscreen的，即使html的高度超出Fullscreen了，document的高宽仍然是fullscreen。也就是说document确实是像一个
+        元素一样存在着，而且其高宽是fullscreen的，没有足够的证据可以证明滚动条的直接产生方是document，但是可以权且假设这条结论成立
+    </div>
+
+</body>
+</html>

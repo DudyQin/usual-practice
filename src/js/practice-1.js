@@ -932,3 +932,68 @@ function consoleLog(Content) {
 //    //getAttribute方法也能返回自定义的属性
 //    consoleLog(ele.getAttribute("bbb"));
 //})();
+
+//(function(){
+//    var wrap = document.getElementById("D-150127-2");
+//    wrap.firstChild.nodeValue = "<ul><li></li><li></li><li></li><li></li><li></li></ul>";
+//    consoleLog(document.getElementById("D-150127-2-2").firstChild.nodeValue.length);
+//})();
+
+//(function(){
+//    var ele = document.getElementById("D-150308-1");
+//    console.log(getComputedStyle(ele,false));
+//})();,
+
+
+(function(){
+    var D1503121atlive = document.getElementById("D-150312-1atlive");
+    var tabWrap = D1503121atlive.getElementsByClassName("tabWrap");
+    //var trigItm = D1503121atlive.getElementsByClassName("trigItm");
+    //var targItm = D1503121atlive.getElementsByClassName("targItm");
+
+    for(var i = 0; i < tabWrap.length; i++){
+        var trigItms = tabWrap[i].getElementsByClassName("trigItm");
+        var targItms = tabWrap[i].getElementsByClassName("targItm");
+        for(var k = 0; k < trigItms.length; k++){
+            trigItms[k].index = k;
+            trigItms[k].onclick = function(){
+                var that = this;
+                //var TargItms = targItms
+                (function(TargItms){
+                    (function(){
+                        consoleLog(TargItms);
+                        for(var j=0; j<TargItms.length; j++){
+                            TargItms[j].style.display = "none";
+                        }
+                        TargItms[that.index].style.display = "block";
+                    })();
+                })(targItms);
+            };
+
+        }
+    }
+
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
