@@ -945,35 +945,35 @@ function consoleLog(Content) {
 //})();,
 
 
-(function(){
-    var D1503121atlive = document.getElementById("D-150312-1atlive");
-    var tabWrap = D1503121atlive.getElementsByClassName("tabWrap");
-    //var trigItm = D1503121atlive.getElementsByClassName("trigItm");
-    //var targItm = D1503121atlive.getElementsByClassName("targItm");
-
-    for(var i = 0; i < tabWrap.length; i++){
-        var trigItms = tabWrap[i].getElementsByClassName("trigItm");
-        var targItms = tabWrap[i].getElementsByClassName("targItm");
-        for(var k = 0; k < trigItms.length; k++){
-            trigItms[k].index = k;
-            trigItms[k].onclick = function(){
-                var that = this;
-                //var TargItms = targItms
-                (function(TargItms){
-                    (function(){
-                        consoleLog(TargItms);
-                        for(var j=0; j<TargItms.length; j++){
-                            TargItms[j].style.display = "none";
-                        }
-                        TargItms[that.index].style.display = "block";
-                    })();
-                })(targItms);
-            };
-
-        }
-    }
-
-})();
+//(function(){
+//    var D1503121atlive = document.getElementById("D-150312-1atlive");
+//    var tabWrap = D1503121atlive.getElementsByClassName("tabWrap");
+//    //var trigItm = D1503121atlive.getElementsByClassName("trigItm");
+//    //var targItm = D1503121atlive.getElementsByClassName("targItm");
+//
+//    for(var i = 0; i < tabWrap.length; i++){
+//        var trigItms = tabWrap[i].getElementsByClassName("trigItm");
+//        var targItms = tabWrap[i].getElementsByClassName("targItm");
+//        for(var k = 0; k < trigItms.length; k++){
+//            trigItms[k].index = k;
+//            trigItms[k].onclick = function(){
+//                var that = this;
+//                //var TargItms = targItms
+//                (function(TargItms){
+//                    (function(){
+//                        consoleLog(TargItms);
+//                        for(var j=0; j<TargItms.length; j++){
+//                            TargItms[j].style.display = "none";
+//                        }
+//                        TargItms[that.index].style.display = "block";
+//                    })();
+//                })(targItms);
+//            };
+//
+//        }
+//    }
+//
+//})();
 
 
 
