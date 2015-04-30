@@ -1020,65 +1020,65 @@ function consoleLog(Content) {
 //
 //})();
 
-(function(){
+//(function(){
+//
+//    var btn = document.getElementById("D-150407-2");
+//
+//    btn.onclick = function(){
+//        //document.getElementsByTagName("input")[0].scrollIntoViewIfNeeded(false);
+//        document.getElementsByTagName("input")[0].scrollIntoView();
+//    }
+//
+//})();
 
-    var btn = document.getElementById("D-150407-2");
-
-    btn.onclick = function(){
-        //document.getElementsByTagName("input")[0].scrollIntoViewIfNeeded(false);
-        document.getElementsByTagName("input")[0].scrollIntoView();
-    }
-
-})();
-
-(function(){
-
-    document.getElementById("D-150412-1").getElementsByTagName("div")[0].onclick = function(){
-        ajax();
-    }
-
-    document.getElementById("D-150412-1").getElementsByTagName("div")[1].onclick = function(){
-        ajax2();
-    }
-
-    function ajax(){
-        var xhr = new XMLHttpRequest();
-
-        xhr.onreadystatechange = function(){
-            if(xhr.readyState == 4){
-                if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-                    console.log(xhr.responseText);
-                }else{
-                    console.log("request was unsuccessful:" + xhr.status);
-                }
-            }
-        }
-
-        xhr.open("get","../json/1.json",true);
-        xhr.send(null);
-
-        setTimeout(function(){
-            ajax();
-        },2000);
-    }
-
-    function ajax2(){
-        var xhr = new XMLHttpRequest();
-
-        xhr.open("get","../json/1.json",true);
-        xhr.send(null);
-
-        setTimeout(function(){
-            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
-                console.log(xhr.responseText);
-            }else{
-                console.log("request was unsuccessful:" + xhr.status);
-            }
-        },2000);
-
-    }
-
-})();
+//(function(){
+//
+//    document.getElementById("D-150412-1").getElementsByTagName("div")[0].onclick = function(){
+//        ajax();
+//    }
+//
+//    document.getElementById("D-150412-1").getElementsByTagName("div")[1].onclick = function(){
+//        ajax2();
+//    }
+//
+//    function ajax(){
+//        var xhr = new XMLHttpRequest();
+//
+//        xhr.onreadystatechange = function(){
+//            if(xhr.readyState == 4){
+//                if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+//                    console.log(xhr.responseText);
+//                }else{
+//                    console.log("request was unsuccessful:" + xhr.status);
+//                }
+//            }
+//        }
+//
+//        xhr.open("get","../json/1.json",true);
+//        xhr.send(null);
+//
+//        setTimeout(function(){
+//            ajax();
+//        },2000);
+//    }
+//
+//    function ajax2(){
+//        var xhr = new XMLHttpRequest();
+//
+//        xhr.open("get","../json/1.json",true);
+//        xhr.send(null);
+//
+//        setTimeout(function(){
+//            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+//                console.log(xhr.responseText);
+//            }else{
+//                console.log("request was unsuccessful:" + xhr.status);
+//            }
+//        },2000);
+//
+//    }
+//
+//})();
 
 
 
