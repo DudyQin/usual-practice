@@ -63,7 +63,12 @@ getRandomColors({
     a: (function () {
         var arr = [];
         for (var i = 0, eles = document.getElementsByTagName("body")[0].getElementsByTagName("*"); i < eles.length; i++) {
-            if(eles[i].getAttribute("data-hasbgclr")){
+            if(eles[i].getAttribute("data-childHasbgclr") == 'false'){
+                for(var j= 0,child = eles[i].getElementsByTagName("*"); j<child.length; j++){
+                    child[j].setAttribute("data-hasbgclr","false");
+                }
+            }
+            if(eles[i].getAttribute("data-hasbgclr") == 'false'){
                 continue;
             }
             arr.push(eles[i]);
