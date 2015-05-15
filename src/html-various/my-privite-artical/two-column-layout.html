@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body style="padding-bottom: 200px;">
+
+    <div style="margin-top: 15px;overflow: auto;width: 100%;">
+        <h2>右侧固定，左侧自适应布局:</h2>
+        <p>BFC法，以下是使用的overflow:hidden，类似的还有table－cell，inline-block</p>
+        <div style="overflow: hidden;width: 100%;">
+            <div style="float: right;width: 200px;height: 100px;">RIGHT</div>
+            <div style="margin-right: 215px;overflow: hidden;height: 100px;">
+                LEFT
+            </div>
+        </div>
+        <p>通过多嵌套一个元素，然后给那个margin-right达到，有点类似BFC法</p>
+        <div style="margin-top: 15px;overflow: hidden;width: 100%;">
+            <div style="float: right;width: 200px;height: 100px;">RIGHT</div>
+            <div style="height: 100px;">
+                <div style="margin-right: 215px;height: 100px;">LEFT</div>
+            </div>
+        </div>
+        <p>绝对定位法：</p>
+        <div style="position: relative;margin-top: 15px;overflow: hidden;width: 100%;height: 100px;">
+            <div style="position: absolute;right: 215px;left: 0;height: 100px;">LEFT</div>
+            <div style="position: relative;margin-left: auto;width: 200px;height: 100px;">RIGHT</div>
+        </div>
+        <div style="margin-top: 5px;position: relative;overflow: hidden;width: 100%;height: 100px;">
+            <div style="position: absolute;right: 0;width: 200px;height: 100px;">RIGHT</div>
+            <div style="margin-right: 215px;height: 100px;">LEFT</div>
+        </div>
+        <p>双飞翼方法，margin负值：</p>
+        <div style="margin-top: 15px;overflow: hidden;width: 100%;">
+            <div style="float: left;width: 100%;height: 100px;">
+                <div style="margin-right: 215px;height: 100px;">LEFT</div>
+            </div>
+            <div style="margin-left: -200px;float: left;width: 200px;height: 100px;">RIGHT</div>
+        </div>
+        <p>table法：</p>
+        <table style="margin-top: 15px;width: 100%;table-layout: fixed;border-collapse: collapse;">
+            <tbody>
+            <tr style="word-wrap: break-word;">
+                <td style="width: auto;height: 100px;padding-right: 15px;vertical-align: top;">LEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFTLEFT</td>
+                <td style="width: 200px;height: 100px;vertical-align: top;">RIGHT</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>我的一个方法，使用margin-top负值：</p>
+        <div style="margin-top: 15px;overflow: hidden;width: 100%;height: 100px;">
+            <div style="margin-right: 215px;height: inherit;">LEFT</div>
+            <div style="margin-left: auto;margin-top: -100px;width: 200px;height: inherit;">RIGHT</div>
+        </div>
+        <p>使用flexbox</p>
+        <div style="height: 100px;display: flex;">
+            <div style="flex-grow: 1;margin-right: 15px;">LEFT</div>
+            <div style="width: 200px;">RIGHT</div>
+        </div>
+        <p>使用calc()</p>
+        <div style="margin-top: 15px;overflow: hidden;width: 100%;height: 100px;">
+            <div style="float: left;height: inherit;width: calc(100% - 215px);">LEFT</div>
+            <div style="float: right;height: inherit;width: 200px;">RIGHT</div>
+        </div>
+        <p>使用圣杯布局，见“http://www.jianshu.com/p/083cf82f5078”中的第一种方法，具体记得稍候补充</p>
+    </div>
+
+    <script src="../../js/product-bgcolor.js"></script>
+</body>
+</html>

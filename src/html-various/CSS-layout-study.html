@@ -810,6 +810,56 @@
 </div>
 
 </div>
+
+<p>如下，如果文字是在浮动元素的前面，那么浮动元素会尽可能的往上面最近的一个行盒的最左边靠齐，因此，浮动元素只会对上面文字的最后一行产生作用</p>
+
+<div style="margin-top: 15px;overflow: hidden;width: 100%;height: 150px;">
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    <div style="margin-bottom: 25px;float: left;width: 100px;height: 100px;"></div>
+</div>
+
+<div style="margin-top: 15px;overflow: hidden;width: 100%;height: 150px;">
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+    <div style="margin-bottom: 25px;float: left;width: 100px;height: 100px;"></div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;">
+    <a href="" style="display: inline-block;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+    <div style="float: left;width: 100px;height: 100px;"></div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;">
+    <div style="float: left;width: 100px;height: 100px;"></div>
+    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;">
+    <a href="" style="display: inline-block;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+    <div style="float: left;width: 100px;height: 100px;"></div>
+</div>
+
+<p>When an inline box contains an in-flow block-level box, the inline box (and its inline ancestors within the same line box) are broken around the block-level box (and any block-level siblings that are consecutive or separated only by collapsible whitespace and/or out-of-flow elements), splitting the inline box into two boxes (even if either side is empty), one on each side of the block-level box(es). The line boxes before the break and after the break are enclosed in anonymous block boxes, and the block-level box becomes a sibling of those anonymous boxes. When such an inline box is affected by relative positioning, any resulting translation also affects the block-level box contained in the inline box</p>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;height: 100px;">
+    <span>
+        <div style="width: 60px;height: 50px;"></div>
+    </span>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;">
+    <div style="overflow: hidden;">
+        <div style="float: left;width: 100%;height: 30px;">左</div>
+        <div style="float: right;margin-left: -40px;width: 40px;height: 30px;">右</div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 </body>
 <script src="../js/product-bgcolor.js"></script>
 <script src="../js/practice-1.js"></script>

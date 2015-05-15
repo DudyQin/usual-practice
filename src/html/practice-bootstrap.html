@@ -854,31 +854,376 @@
     </ul>
 </div>
 
-<p>如下，如果文字是在浮动元素的前面，那么浮动元素会尽可能的往上面最近的一个行盒的最左边靠齐，因此，浮动元素只会对上面文字的最后一行产生作用</p>
-<div style="margin-top: 15px;overflow: hidden;width: 100%;height: 150px;">
-    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
-    <div style="margin-bottom: 25px;float: left;width: 100px;height: 100px;"></div>
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <ul class="pager">
+        <li><a href="#">&laquo;上一页</a></li>
+        <li><a href="#">下一页&raquo;</a></li>
+    </ul>
 </div>
 
-<div style="margin-top: 15px;overflow: hidden;width: 100%;height: 150px;">
-    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
-    <div style="margin-bottom: 25px;float: left;width: 100px;height: 100px;"></div>
+<div style="margin-top: 15px;overflow: auto;width: 100%;height: 100px;">
+    <span>
+        <div style="width: 60px;height: 50px;"></div>
+    </span>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <h3>Example heading <span class="label label-default">New</span></h3>
+    <!--代码-->
+    <span class="label label-default">默认标签</span>
+    <span class="label label-primary">主要标签</span>
+    <span class="label label-success">成功标签</span>
+    <span class="label label-info">信息标签</span>
+    <span class="label label-warning">警告标签</span>
+    <span class="label label-danger">错误标签</span>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <!--代码-->
+    <a href="#">Inbox <span class="badge">42</span></a>
+    <!--navbar-default导航条勋章-->
+    <div class="navbar navbar-default" role="navigation">
+        　<div class="navbar-header">
+        　    <a href="##" class="navbar-brand">慕课网</a>
+        　</div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="##">网站首页</a></li>
+            <li><a href="##">系列教程</a></li>
+            <li><a href="##">名师介绍</a></li>
+            <li><a href="##">成功案例<span class="badge">23</span></a></li>
+            <li><a href="##">关于我们</a></li>
+        </ul>
+    </div>
+    <!--nav-pills导航条勋章-->
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Messages <span class="badge">3</span></a></li>
+    </ul>
+    <br />
+    <ul class="nav nav-pills nav-stacked" style="max-width: 260px;">
+        <li class="active">
+            <a href="#">
+                <span class="badge pull-right">42</span>
+                Home
+            </a>
+        </li>
+        <li><a href="#">Profile</a></li>
+        <li>
+            <a href="#">
+                <span class="badge pull-right">3</span>
+                Messages
+            </a>
+        </li>
+    </ul>
+    <br />
+    <!--按钮勋章-->
+    <button class="btn btn-primary" type="button">
+        Messages <span class="badge">4</span>
+    </button>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <div class="alert alert-success alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        恭喜您操作成功！
+    </div>
+    <div class="alert alert-info alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        请输入正确的密码
+    </div>
+    <div class="alert alert-warning alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        您已操作失败两次，还有最后一次机会
+    </div>
+    <div class="alert alert-danger alert-dismissable" role="alert">
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        对不起，您输入的密码有误
+    </div>
+    <!--下面是代码部分-->
+    <h2>下面是代码部区</h2>
+    <div class="alert alert-info" role="alert">请修改相应信息</div>
+    <div class="alert alert-success" role="alert">谢谢，操作成功！</div>
+    <div class="alert alert-warning" role="alert">您已操作失败两次，还有最后一次机会</div>
+    <div class="alert alert-danger" role="alert">对不起，您刚才的操作失败</div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <div class="progress">
+        <div class="progress-bar" style="width:40%">50%
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-success" style="width:40%"></div>
+    </div>
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-info" style="width:60%"></div>
+    </div>
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-warning" style="width:80%"></div>
+    </div>
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-danger" style="width:50%"></div>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+    </div>
 </div>
 
 <div style="margin-top: 15px;overflow: auto;width: 100%;">
-    <a href="" style="display: inline-block;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-    <div style="float: left;width: 100px;height: 100px;"></div>
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="http://img.mukewang.com/52e1d29d000161fe06000338-300-170.jpg" alt="...">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">系列：十天精通CSS3</h4>
+            <div>全方位深刻详解CSS3模块知识，经典案例分析，代码同步调试，让网页穿上绚丽装备！</div>
+        </div>
+    </div>
 </div>
 
-<div style="margin-top: 15px;overflow: auto;width: 100%;">
-    <div style="float: left;width: 100px;height: 100px;"></div>
-    哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="http://a.disquscdn.com/uploads/users/3740/2069/avatar92.jpg?1406972031" alt="...">
+        </a>
+        <div class="media-body">
+            <h4 class="media-heading">我是大漠</h4>
+            <div>我是W3cplus站长大漠，我在写Bootstrap框中的媒体对象测试用例</div>
+            <div class="media">
+                <a class="pull-left" href="#">
+                    <img class="media-object" src="http://tp2.sinaimg.cn/3306361973/50/22875318196/0" alt="...">
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">慕课网</h4>
+                    <div>大漠写的《玩转Bootstrap》系列教程即将会在慕课网上发布</div>
+                    <div class="media">
+                        <a class="pull-left" href="#">
+                            <img class="media-object" src="http://tp4.sinaimg.cn/1167075935/50/22838101204/1" alt="...">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">W3cplus</h4>
+                            <div>W3cplus站上还有很多教程....</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div style="margin-top: 15px;overflow: auto;width: 100%;">
-    <a href="" style="display: inline-block;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-    <div style="float: left;width: 100px;height: 100px;"></div>
+<div style="margin-top: 30px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <ul class="media-list">
+        <li class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://a.disquscdn.com/uploads/users/3740/2069/avatar92.jpg?1406972031" alt="...">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">我是大漠</h4>
+                <div>我是W3cplus站长大漠，我在写Bootstrap框中的媒体对象测试用例</div>
+            </div>
+        </li>
+        <li class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://tp2.sinaimg.cn/3306361973/50/22875318196/0" alt="...">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">慕课网</h4>
+                <div>大漠写的《玩转Bootstrap》系列教程即将会在慕课网上发布</div>
+            </div>
+        </li>
+        <li class="media">
+            <a class="pull-left" href="#">
+                <img class="media-object" src="http://tp4.sinaimg.cn/1167075935/50/22838101204/1" alt="...">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">W3cplus</h4>
+                <div>W3cplus站上还有很多教程....</div>
+            </div>
+        </li>
+    </ul>
 </div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <ul class="list-group">
+        <li class="list-group-item">揭开CSS3的面纱</li>
+        <li class="list-group-item">CSS3选择器</li>
+        <li class="list-group-item">CSS3边框</li>
+        <li class="list-group-item">CSS3背景</li>
+        <li class="list-group-item">CSS3文本</li>
+    </ul>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <ul class="list-group">
+        <li class="list-group-item">
+            <span class="badge">13</span><span class="badge">13</span>揭开CSS3的面
+        </li>
+        <li class="list-group-item">
+            <span class="badge">456</span>CSS3选择器
+        </li>
+        <li class="list-group-item">
+            <span class="badge">892</span>CSS3边框
+        </li>
+        <li class="list-group-item">
+            <span class="badge">90</span>CSS3背景
+        </li>
+        <li class="list-group-item">
+            <span class="badge">1290</span>CSS3文本
+        </li>
+    </ul>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <div class="list-group">
+        <a href="##" class="list-group-item">
+            <h4 class="list-group-item-heading">图解CSS3</h4>
+            <p class="list-group-item-text">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性...</p>
+        </a>
+        <a href="##" class="list-group-item">
+            <h4 class="list-group-item-heading">Sass中国</h4>
+            <p class="list-group-item-text">致力于为中国开发者提供最全面，最具影响力，最前沿的Sass相关技术与教程...</p>
+        </a>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <div class="panel panel-default">
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性</div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <h3>面板中嵌套表格（一）</h3>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">
+            <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>＃</th>
+                    <th>我的书</th>
+                    <th>发布时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>《图解CSS3》</td>
+                    <td>2014-07-10</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+    <h3>面板中嵌套表格（二）</h3>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">
+            <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+            </p>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>＃</th>
+                <th>我的书</th>
+                <th>发布时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>《图解CSS3》</td>
+                <td>2014-07-10</td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <h3>面板中嵌套列表组（一）</h3>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">
+            <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+            </p>
+            <ul class="list-group">
+                <li class="list-group-item">我是列表项</li>
+                <li class="list-group-item">我是列表项</li>
+                <li class="list-group-item">我是列表项</li>
+            </ul>
+        </div>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+
+    <h3>面板中嵌套列表组（二）</h3>
+    <div class="panel panel-default">
+        <div class="panel-heading">图解CSS3</div>
+        <div class="panel-body">
+            <p>详细讲解了选择器、边框、背景、文本、颜色、盒模型、伸缩布局盒模型、多列布局、渐变、过渡、动画、媒体、响应Web设计、Web字体等主题下涵盖的所有CSS3新特性
+            </p>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">我是列表项</li>
+            <li class="list-group-item">我是列表项</li>
+            <li class="list-group-item">我是列表项</li>
+        </ul>
+        <div class="panel-footer">作者：大漠</div>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <h3>bootstrap命名分析：</h3>
+    <p>类似下面，基础类lg被设定在了组件级别，而不是全局级别</p>
+    <a href="" class="btn btn-primary btn-lg">button</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>class="btn btn-primary btn-lg"</span>
+</div>
+
 
 
 <script src="../js/jquery-1.9.1.min.js"></script>
