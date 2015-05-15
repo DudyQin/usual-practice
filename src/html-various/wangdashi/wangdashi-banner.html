@@ -83,6 +83,7 @@
             padding-top: 1.61458333%;
             padding-bottom: 1.61458333%;
             text-align: center;
+            letter-spacing: normal;
             word-break: break-all;
             width: 29.166667%;
             font-size: 24px;
@@ -94,6 +95,11 @@
             background-image: -ms-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, #ffffff 6.8181818%, #ffffff 100%);
             background-image: -webkit-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, #ffffff 6.8181818%, #ffffff 100%);
             background-image: linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, #ffffff 6.8181818%, #ffffff 100%);
+            text-decoration: none;
+        }
+
+        .panel > a:hover{
+            text-decoration: underline;
         }
 
         @media (max-width: 991px) {
@@ -121,6 +127,7 @@
         .banner .btn-inner{
             float: left;
             margin-right: 8px;
+            letter-spacing: normal;
             width: 16px;
             height: 16px;
             border-radius: 100%;
@@ -285,7 +292,9 @@
         var itemOldClass = items[1].getAttribute("class");
         for(var i=0; i<btns.length; i++){
             btns[i].index = i;
-            btns[i].onclick = function () {
+            btns[i].onclick = click;
+
+            function click(){
                 for(var k=0; k<btns.length; k++){
                     btns[k].setAttribute("class",btnOldClass);
                     items[k].setAttribute("class",itemOldClass)
@@ -293,6 +302,7 @@
                 this.setAttribute("class",btnOldClass + " active");
                 items[this.index].setAttribute("class",itemOldClass + " active")
             }
+
         }
     }
 
