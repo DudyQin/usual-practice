@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>汪大师</title>
     <style type="text/css">
         html,body{
             margin: 0;
@@ -27,10 +29,11 @@
             background-repeat: no-repeat;
             background-position: center center;
             opacity: 0;
-            -o-transition:opacity 0.6s ease-in-out;
-            -moz-transition:opacity 0.6s ease-in-out;
-            -webkit-transition:opacity 0.6s ease-in-out;
-            transition:opacity 0.6s ease-in-out;
+            /*设置渐隐渐现的时长*/
+            -o-transition:opacity 1.2s ease-in;
+            -moz-transition:opacity 1.2s ease-in;
+            -webkit-transition:opacity 1.2s ease-in;
+            transition:opacity 1.2s ease-in;
             display: inline-block;
         }
 
@@ -85,21 +88,30 @@
             text-align: center;
             letter-spacing: normal;
             word-break: break-all;
-            width: 29.166667%;
+            width: 25%;
+            box-sizing: border-box;
             font-size: 24px;
             font-family: Arial;
+            -o-transition:width 0.3s ease-in-out;
+            -moz-transition:width 0.3s ease-in-out;
+            -webkit-transition:width 0.3s ease-in-out;
+            transition:width 0.3s ease-in-out;
             color: #000000;
+            background-image:-o-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, rgba(0,0,0,0) 6.8181818%, rgba(0,0,0,0) 100%);
+            background-image:-moz-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, rgba(0,0,0,0) 6.8181818%, rgba(0,0,0,0) 100%);
+            background-image:-ms-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, rgba(0,0,0,0) 6.8181818%, rgba(0,0,0,0) 100%);
+            background-image:-webkit-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, rgba(0,0,0,0) 6.8181818%, rgba(0,0,0,0) 100%);
+            background-image:linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, rgba(0,0,0,0) 6.8181818%, rgba(0,0,0,0) 100%);
             background-repeat: no-repeat;
-            background-image: -o-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, #ffffff 6.8181818%, #ffffff 100%);
-            background-image: -moz-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, #ffffff 6.8181818%, #ffffff 100%);
-            background-image: -ms-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, #ffffff 6.8181818%, #ffffff 100%);
-            background-image: -webkit-linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, #ffffff 6.8181818%, #ffffff 100%);
-            background-image: linear-gradient(180deg, #ffd71a 0, #ffd71a 6.8181818%, #ffffff 6.8181818%, #ffffff 100%);
+            background-color: #ffffff;
             text-decoration: none;
         }
 
-        .panel > a:hover{
-            text-decoration: underline;
+        @media (min-width: 1025px) {
+            .panel > a:hover{
+                width: 29.166667%;
+                text-decoration: underline;
+            }
         }
 
         @media (max-width: 991px) {
@@ -109,6 +121,74 @@
                 width: auto;
             }
         }
+
+        @media (max-width: 767px) {
+            .panel > a{
+                left: 0;
+                -o-transform: translate(0,calc(100% + 20px));
+
+                -moz-transform: translate(0,-moz-calc(100% + 20px));
+                -moz-transform: translate(0,calc(100% + 20px));
+
+                -ms-transform: translate(0,calc(100% + 20px));
+
+                -webkit-transform: translate(0,-webkit-calc(100% + 20px));
+                -webkit-transform: translate(0,calc(100% + 20px));
+
+                transform: translate(0,-moz-calc(100% + 20px));
+                transform: translate(0,-webkit-calc(100% + 20px));
+                transform: translate(0,calc(100% + 20px));
+
+                padding-top: -moz-calc(1.61458333% + 7px);
+                padding-top: -webkit-calc(1.61458333% + 7px);
+                padding-top: calc(1.61458333% + 7px);
+
+                padding-bottom: -moz-calc(1.61458333% + 7px);
+                padding-bottom: -webkit-calc(1.61458333% + 7px);
+                padding-bottom: calc(1.61458333% + 7px);
+
+                width: 100%;
+
+                /*-o-transition:background-position 3s ease-in-out;*/
+                /*-moz-transition:background-position 3s ease-in-out;*/
+                /*-webkit-transition:background-position 3s ease-in-out;*/
+                /*transition:background-position 3s ease-in-out;*/
+
+                background-image:
+                -o-linear-gradient(180deg, #ffd71a 0, #ffd71a 5.2151239%, rgba(0,0,0,0) 5.2151239%, rgba(0,0,0,0) 100%),
+                -o-linear-gradient(0deg, #ffd71a 0, #ffd71a 5.2151239%, rgba(0,0,0,0) 5.2151239%, rgba(0,0,0,0) 100%),
+                -o-linear-gradient(90deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%),
+                -o-linear-gradient(270deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%);
+                background-image:
+                -moz-linear-gradient(180deg, #ffd71a 0, #ffd71a 5.2151239%, rgba(0,0,0,0) 5.2151239%, rgba(0,0,0,0) 100%),
+                -moz-linear-gradient(0deg, #ffd71a 0, #ffd71a 5.2151239%, rgba(0,0,0,0) 5.2151239%, rgba(0,0,0,0) 100%),
+                -moz-linear-gradient(90deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%),
+                -moz-linear-gradient(270deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%);
+                background-image:
+                -ms-linear-gradient(180deg, #ffd71a 0, #ffd71a 5.2151239%, rgba(0,0,0,0) 5.2151239%, rgba(0,0,0,0) 100%),
+                -ms-linear-gradient(0deg, #ffd71a 0, #ffd71a 5.2151239%, rgba(0,0,0,0) 5.2151239%, rgba(0,0,0,0) 100%),
+                -ms-linear-gradient(90deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%),
+                -ms-linear-gradient(270deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%);
+                background-image:
+                -webkit-linear-gradient(180deg, #ffd71a 0, #ffd71a 5.2151239%, rgba(0,0,0,0) 5.2151239%, rgba(0,0,0,0) 100%),
+                -webkit-linear-gradient(0deg, #ffd71a 0, #ffd71a 5.2151239%, rgba(0,0,0,0) 5.2151239%, rgba(0,0,0,0) 100%),
+                -webkit-linear-gradient(90deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%),
+                -webkit-linear-gradient(270deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%);
+                background-image:
+                linear-gradient(180deg, #ffd71a 0, #ffd71a 8.3333333%, rgba(0,0,0,0) 8.3333333%, rgba(0,0,0,0) 100%),
+                linear-gradient(0deg, #ffd71a 0, #ffd71a 8.3333333%, rgba(0,0,0,0) 8.3333333%, rgba(0,0,0,0) 100%),
+                linear-gradient(90deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%),
+                linear-gradient(270deg, #ffd71a 0, #ffd71a 0.782%, rgba(0,0,0,0) 0.782%, rgba(0,0,0,0) 100%);
+
+                /*background-position: left top,right bottom,12.585366% 0,-12.585366% 100%;*/
+                /*background-position: left top, right bottom, 78px center, -78px center;*/
+                background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+            }
+        }
+
+        /*.panel > a.bgAni{*/
+            /*background-position: -100% 0, 100% 0, 0 -100%,0 100% !important;*/
+        /*}*/
 
         .banner .btn{
             position: absolute;
@@ -142,51 +222,74 @@
 
         @-o-keyframes btnactive {
             0%{
+                -o-box-shadow: 0 0 3px 0 #ffffff;
+                -webkit-box-shadow: 0 0 3px 0 #ffffff;
                 box-shadow: 0 0 3px 0 #ffffff;
             }
             100%{
-                box-shadow: 0 0 3px 4px #ffffff;
+                -o-box-shadow: 0 0 3px 3px #ffffff;
+                -webkit-box-shadow: 0 0 3px 3px #ffffff;
+                box-shadow: 0 0 3px 3px #ffffff;
             }
         }
 
         @-moz-keyframes btnactive {
             0%{
+                -moz-box-shadow: 0 0 3px 0 #ffffff;
+                -webkit-box-shadow: 0 0 3px 0 #ffffff;
                 box-shadow: 0 0 3px 0 #ffffff;
             }
             100%{
-                box-shadow: 0 0 3px 4px #ffffff;
+                -moz-box-shadow: 0 0 3px 3px #ffffff;
+                -webkit-box-shadow: 0 0 3px 3px #ffffff;
+                box-shadow: 0 0 3px 3px #ffffff;
             }
         }
 
         @-ms-keyframes btnactive {
             0%{
+                -ms-box-shadow: 0 0 3px 0 #ffffff;
+                -webkit-box-shadow: 0 0 3px 0 #ffffff;
                 box-shadow: 0 0 3px 0 #ffffff;
             }
             100%{
-                box-shadow: 0 0 3px 4px #ffffff;
+                -ms-box-shadow: 0 0 3px 3px #ffffff;
+                -webkit-box-shadow: 0 0 3px 3px #ffffff;
+                box-shadow: 0 0 3px 3px #ffffff;
             }
         }
 
         @-webkit-keyframes btnactive {
             0%{
+                -webkit-box-shadow: 0 0 3px 0 #ffffff;
                 box-shadow: 0 0 3px 0 #ffffff;
             }
             100%{
-                box-shadow: 0 0 3px 4px #ffffff;
+                -webkit-box-shadow: 0 0 3px 3px #ffffff;
+                box-shadow: 0 0 3px 3px #ffffff;
             }
         }
 
         @keyframes btnactive {
             0%{
+                -o-box-shadow: 0 0 3px 0 #ffffff;
+                -moz-box-shadow: 0 0 3px 0 #ffffff;
+                -ms-box-shadow: 0 0 3px 0 #ffffff;
+                -webkit-box-shadow: 0 0 3px 0 #ffffff;
                 box-shadow: 0 0 3px 0 #ffffff;
             }
             100%{
-                box-shadow: 0 0 3px 4px #ffffff;
+                -o-box-shadow: 0 0 3px 3px #ffffff;
+                -moz-box-shadow: 0 0 3px 3px #ffffff;
+                -ms-box-shadow: 0 0 3px 3px #ffffff;
+                -webkit-box-shadow: 0 0 3px 3px #ffffff;
+                box-shadow: 0 0 3px 3px #ffffff;
             }
         }
 
         .banner .btn-inner.active{
             border-color: #ffd71a;
+            /*border-width: 2px;*/
             -o-animation-name: btnactive;
             -o-animation-duration: 0.6s;
             -o-animation-timing-function: ease-in-out;
@@ -224,8 +327,8 @@
         <!--轮播图片 End-->
 
         <!--中间文字模块-->
-        <div class="panel" style="background-image: url(title.png)" data-xsBg="">
-            <a href="mailto:WJN@a163.COM">EMAIL:WJN@a163.COM</a>
+        <div class="panel" style="background-image: url(title.png)" data-xsBg="url(title.png)">
+            <a href="http://mail.163.com">http://mail.163.com</a>
         </div>
         <!--中间文字模块 End-->
 
@@ -249,6 +352,40 @@
     var setsizeEle = document.getElementsByClassName("panel")[0].getElementsByTagName("a")[0];
     var items = document.getElementsByClassName("banner")[0].getElementsByClassName("item");
     var btns = document.getElementsByClassName("btn-inner");
+    var setEmailBtnOldBgPos;
+    var setEmailBtnOldTransi = "background-position 6s ease-in-out";
+    var bgPos1;
+    var bgPos2;
+
+    setTimeout(function(){
+        var cltW = document.documentElement.clientWidth || document.body.clientWidth;
+
+        if(cltW <= 767){
+            setsizeEle.style.transition = setEmailBtnOldTransi;
+            setsizeEle.style.webkitTransition = setEmailBtnOldTransi;
+            setsizeEle.style.mozTransition = setEmailBtnOldTransi;
+            setsizeEle.style.oTransition = setEmailBtnOldTransi;
+        }
+
+    },100);
+
+    function setEmailBgPos(){
+        var cltW = document.documentElement.clientWidth || document.body.clientWidth;
+
+        if(cltW <= 767){
+            bgPos1 = (78 / 625 * (setsizeEle.clientWidth)) + "px";
+            bgPos2 = -(78 / 625 * (setsizeEle.clientWidth)) + "px";
+
+//            setsizeEle.style.transition = "";
+//            setsizeEle.style.webkitTransition = "";
+//            setsizeEle.style.mozTransition = "";
+//            setsizeEle.style.oTransition = "";
+
+            setsizeEle.style.backgroundPosition = "left top, right bottom, " + bgPos1 + " center, " + bgPos2 + " center";
+            setEmailBtnOldBgPos = setsizeEle.style.backgroundPosition;
+        }
+
+    }
 
     function setBg(){
         var cltW = document.documentElement.clientWidth || document.body.clientWidth;
@@ -277,24 +414,63 @@
         }
     }
 
+    function setEmalBtnBgAni(){
+        var cltW = document.documentElement.clientWidth || document.body.clientWidth;
+        if(cltW <= 767){
+            var boxW = setsizeEle.clientWidth;
+            var boxH = setsizeEle.clientHeight;
+            var bgAniPrame = "-" + boxW + "px 0, " + boxW + "px 0, " + bgPos1 + " -" + boxH + "px, " + bgPos2 + " " + boxH + "px";
+            var isDisappear = false;
+
+            setTimeout(function(){
+                ani();
+            },100);
+
+            setsizeEle.addEventListener("webkitTransitionEnd",ani);
+            setsizeEle.addEventListener("transitionend",ani);
+
+            function ani(){
+                if(!isDisappear){
+                    setsizeEle.style.backgroundPosition = bgAniPrame;
+                }
+                if(isDisappear){
+                    setsizeEle.style.backgroundPosition = setEmailBtnOldBgPos;
+                }
+                isDisappear = !isDisappear;
+
+                setTimeout(ani,6000);
+
+            }
+        }
+    }
+
+    setEmailBgPos();
     setBg();
     setSize();
+    setEmalBtnBgAni();
 
     window.onresize = function(){
         setBg();
         setSize();
+        setEmailBgPos();
+        setEmalBtnBgAni();
     }
-
-    lunbo();
 
     function lunbo(){
         var btnOldClass = btns[1].getAttribute("class");
         var itemOldClass = items[1].getAttribute("class");
+        var timer = 0;
+        var timerFn = null;
+
         for(var i=0; i<btns.length; i++){
             btns[i].index = i;
             btns[i].onclick = click;
 
             function click(){
+                timer = this.index;
+                clearInterval(timerFn);
+                autoPlay();
+
                 for(var k=0; k<btns.length; k++){
                     btns[k].setAttribute("class",btnOldClass);
                     items[k].setAttribute("class",itemOldClass)
@@ -304,7 +480,27 @@
             }
 
         }
+
+        function autoPlay(){
+            timerFn = setInterval(function(){
+
+                timer++;
+
+                if(timer == items.length){
+                    timer = 0;
+                }
+
+                btns[timer].onclick();
+            //设置轮播的时间间隔
+            },4000);
+        }
+
+        autoPlay();
+
     }
+
+    lunbo();
+
 
 </script>
 </html>
