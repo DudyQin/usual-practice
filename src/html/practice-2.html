@@ -920,6 +920,63 @@ box-shadow阴影区域实际是元素的正投影，跟元素的border－box一�
 
 <div style="margin-top: 15px;" id="D-150515-2">11777777777777 7222222 22</div>
 
+<div style="position: relative;height: 80px;margin-top: 15px;overflow: auto;">
+    <div style="z-index:-1;position: absolute;left: 0;top: 0;height: 50px;width: 200px;">1111</div>
+</div>
+
+<p>zoom缩放：</p>
+<div style="margin-top: 15px;overflow: auto;width: 100%;">
+    <div style="width: 100px;height: 100px;margin-left: auto;margin-right: auto;zoom:2;">UP</div>
+    <div style="width: 100px;height: 100px;margin-left: auto;margin-right: auto;">DOWN</div>
+</div>
+
+<p>transform:scale()缩放：</p>
+<div style="margin-top: 15px;overflow: auto;width: 100%;">
+    <div style="margin-top: 50px;width: 100px;height: 100px;margin-left: auto;margin-right: auto;transform: scale(2)">UP</div>
+    <div style="width: 100px;height: 100px;margin-left: auto;margin-right: auto;">DOWN</div>
+</div>
+
+<a href="http://localhost:63342/usual-practice/src/html/practice-pure.html">http://localhost:63342/usual-practice/src/html/practice-pure.html</a>
+
+<div style="margin-top: 15px;overflow: auto;height: 100px;">
+    <div style="overflow: hidden;">
+        <div style="line-height: 0;font-size: 18px;color: #ffffff;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+    </div>
+    <div style="overflow: hidden;">
+        <span style="line-height: 100px;font-size: 18px;color: #ffffff;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;">
+    <div style="line-height: 1.5;">
+        <p style="font-size: 18px;color: #ffffff;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+        <span style="font-size: 18px;color: #ffffff;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</span>
+    </div>
+    <div style="line-height: 2em;">
+        <p>父级设置line height2em，子级计算line-height时，是根据父级的font－size来计算的</p>
+        <p style="font-size: 18px;color: #ffffff;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</p>
+    </div>
+</div>
+
+<div style="margin-top: 15px;font:16px bold 'Microsoft Yahei';">哈哈哈哈哈哈哈哈哈哈</div>
+
+<h1>圣杯布局</h1>
+
+<div style="margin: 0 200px;height: 200px;font-size: 38px;font-weight: bold;">
+    <div style="float: left;width: 100%;height: inherit;">MAIN</div>
+    <div style="float: left;width: 200px;height: inherit;margin-left: -100%;position: relative;left: -200px;background-color: #ddd;">LEFT</div>
+    <div style="float: left;width: 200px;height: inherit;margin-left: -200px;position: relative;right: -200px;background-color: #ccc;">RIGHT</div>
+</div>
+
+<div style="overflow: hidden;">
+    <div style="margin: 15px 200px;height: 200px;font-size: 38px;font-weight: bold;">
+        <div style="float: left;width: 100%;height: inherit;">MAIN</div>
+        <div style="float: left;margin-left: -100%;position: relative;left: -200px;width: 200px;height: inherit;">LEFT</div>
+        <div style="float: left;margin-left: -200px;position: relative;right: -200px;width: 200px;height: inherit;">RIGHT</div>
+    </div>
+</div>
+
+
 </body>
 <script src="../js/product-bgcolor.js"></script>
 <script src="../js/practice-1.js"></script>

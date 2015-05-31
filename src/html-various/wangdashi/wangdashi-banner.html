@@ -66,11 +66,11 @@
 
         @media (max-width: 767px) {
             .panel{
-                -o-transform: translate(-50%,0) scale(1.64);
-                -moz-transform: translate(-50%,0) scale(1.64);
-                -ms-transform: translate(-50%,0) scale(1.64);
-                -webkit-transform: translate(-50%,0) scale(1.64);
-                transform: translate(-50%,0) scale(1.64);
+                -o-transform: translate(-50%,0) scale(1.225);
+                -moz-transform: translate(-50%,0) scale(1.225);
+                -ms-transform: translate(-50%,0) scale(1.225);
+                -webkit-transform: translate(-50%,0) scale(1.225);
+                transform: translate(-50%,0) scale(1.225);
             }
         }
 
@@ -327,7 +327,7 @@
         <!--轮播图片 End-->
 
         <!--中间文字模块-->
-        <div class="panel" style="background-image: url(title.png)" data-xsBg="url(title.png)">
+        <div class="panel" style="background-image: url(title.png)" data-xsBg="url(title1.png)">
             <a href="http://mail.163.com">http://mail.163.com</a>
         </div>
         <!--中间文字模块 End-->
@@ -373,8 +373,8 @@
         var cltW = document.documentElement.clientWidth || document.body.clientWidth;
 
         if(cltW <= 767){
-            bgPos1 = (78 / 625 * (setsizeEle.clientWidth)) + "px";
-            bgPos2 = -(78 / 625 * (setsizeEle.clientWidth)) + "px";
+            bgPos1 = (0 / 625 * (setsizeEle.clientWidth)) + "px";
+            bgPos2 = -(0 / 625 * (setsizeEle.clientWidth)) + "px";
 
 //            setsizeEle.style.transition = "";
 //            setsizeEle.style.webkitTransition = "";
@@ -409,9 +409,9 @@
         if(parseInt(setsizeEle.style.fontSize) < 18){
             setsizeEle.style.fontSize = "18px";
         }
-        if(cltW <= 767){
-            setsizeEle.style.fontSize = "12px";
-        }
+//        if(cltW <= 767){
+//            setsizeEle.style.fontSize = "12px";
+//        }
     }
 
     function setEmalBtnBgAni(){
@@ -436,6 +436,11 @@
                 if(isDisappear){
                     setsizeEle.style.backgroundPosition = setEmailBtnOldBgPos;
                 }
+                window.addEventListener("resize",function(){
+                    setsizeEle.style.backgroundPosition = setEmailBtnOldBgPos;
+                    isDisappear = false;
+                    return false;
+                });
                 isDisappear = !isDisappear;
 
                 setTimeout(ani,6000);
@@ -453,7 +458,7 @@
         setBg();
         setSize();
         setEmailBgPos();
-        setEmalBtnBgAni();
+//        setEmalBtnBgAni();
     }
 
     function lunbo(){

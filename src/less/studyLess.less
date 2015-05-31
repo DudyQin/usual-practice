@@ -1,0 +1,74 @@
+@bg1:#000000;
+
+.mixin1{
+  outline: 10px solid #ff0000;
+}
+
+.demo1{
+  width: 200px;
+  height: 200px;
+  background-color: @bg1;
+  .mixin1;
+  .main{
+    width: 100px;
+    height: 100px;
+    background-color: #0000CC;
+  }
+}
+
+.clearfix{
+  &:before,&:after{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+  .main{
+    width: 200px;
+    height: 200px;
+    float: left;
+  }
+}
+
+.demo2{
+  @base: 0.5;
+  @filter: @base * 2;
+  @other: @base + @filter;
+  width: percentage(@base);
+  height: (@other * 10) + px;
+}
+
+.demo3{
+  &:extend(.clearfix .main);
+}
+
+@selector: barner;
+
+.@{selector}{
+  clear: both;
+  border:10px solid;
+}
+
+.extend1{
+//  border: 10px solid;
+}
+
+.demo4{
+  @img: images;
+  @url: 11.png;
+  @width: 200px;
+  width: @width;
+//  width: (20px + 30px) * 2;
+  height: 200px;
+  background-image: url('../@{img}/@{url}');
+  &:extend(.extend1);
+}
+
+
+
+
+
+
+
+

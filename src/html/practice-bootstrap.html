@@ -1224,10 +1224,41 @@
     <a href="" class="btn btn-primary btn-lg">button</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>class="btn btn-primary btn-lg"</span>
 </div>
 
+<div style="margin-top: 15px;width: 100%;" data-childHasbgclr="false" data-hasbgclr="false">
+    <button class="btn btn-primary" type="button">点击我</button>
 
+    <div class="modal fade" id="mymodal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">模态弹出窗标题</h4>
+                </div>
+                <div class="modal-body">
+                    <p>模态弹出窗主体内容</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>
 
 <script src="../js/jquery-1.9.1.min.js"></script>
 <script src="../js/bootstrap.js"></script>
 <script src="../js/product-bgcolor.js"></script>
+<script>
+
+    // 模态弹出窗
+    $(function(){
+        $(".btn").click(function(){
+            $("#mymodal").modal("toggle");
+        });
+    });
+    // 模态弹出窗 END
+
+</script>
 </body>
 </html>

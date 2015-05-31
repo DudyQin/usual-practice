@@ -1,0 +1,10 @@
+{
+  "bgs":{
+    "bg":"url(banner1.jpg)",
+    "bg":"url(banner2.jpg)",
+    "bg":"url(banner3.jpg)",
+    "bg":"url(banner4.jpg)",
+    "bg":"url(banner5.jpg)",
+    "bg":"url(banner6.jpg)"
+  }
+}
