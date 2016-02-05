@@ -1149,9 +1149,9 @@ FnD1411012();*/
 //    alert("onload");
 //};
 
-window.addEventListener("unload",function(){
-   alert("onunload");
-});
+//window.addEventListener("unload",function(){
+//   alert("onunload");
+//});
 
 
 

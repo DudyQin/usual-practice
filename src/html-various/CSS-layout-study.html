@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="../css/practice-1.css"/>
+    <style type="text/css">
+
+    </style>
 </head>
 <body>
 
@@ -853,12 +856,392 @@
     </div>
 </div>
 
+<div style="margin-top: 15px;height: 30px;text-indent: 100px;">
+    <span>哈哈哈哈哈哈哈哈哈哈</span>
+</div>
+
+<div style="margin-top: 15px;">
+    <div style="overflow: hidden;margin-left: auto;margin-right: auto;width: 100px;height: 150px;padding: 30px;-webkit-background-clip: content-box;
+    -moz-background-clip: content-box;
+    background-clip: content-box;">
+        <div style="width: 300px;height: 20px;"></div>
+    </div>
+</div>
+
+<div style="width: 100%;margin-top: 15px;height: 100px;overflow: scroll"></div>
+
+<div style="margin-top: 15px;">
+    <p>In the case of a scrollbar being placed on an edge of the element's box, it should be inserted between <b>the inner border edge and the outer padding edge</b>. Any space taken up by the scrollbars should be taken out of (subtracted from the dimensions of) the containing block formed by the element with the scrollbars.</p>
+    <div style="margin-left: auto;margin-right: auto;width: 200px;height: 200px;background-clip: content-box;padding: 30px;border: 20px solid;overflow: auto;direction: rtl">
+        <div style="width: 400px;height: 400px;"></div>
+    </div>
+</div>
+<h2>利用opacity:0.99创建新的堆叠上下文，提高它的层级</h2>
+<div style="margin-top: 15px;overflow: auto;">
+    <div style="opacity:0.99;width: 150px;height: 150px;margin-left: auto;margin-right: auto;"></div>
+    <div style="width: 200px;height: 150px;margin-left: auto;margin-right: auto;margin-top: -50px;"></div>
+</div>
+
+<hr/>
+
+<div style="margin-left: auto;margin-right: auto;width: 100px;height: 200px;border-radius:300px/400px;background-color: #ffff00;"></div>
+
+<hr/>
+
+<p>元素垂直中心点和父级基线上1/2 x-height高度对齐：</p>
+<div style="width: 100%;text-align: center;line-height: 250px;font-size: 88px;">
+    <div style="width: 150px;height: 150px;display: inline-block;vertical-align: middle;">
+        <div style="width: 100%;height: 50%;"></div>
+        <div style="width: 100%;height: 50%;"></div>
+    </div>
+    X
+</div>
+
+<hr/>
+
+<p>用父级元素font-size可以控制内部inline-block之间的间距：</p>
+<div style="font-size: 228px;">
+    <div style="margin-right: 8px;vertical-align: text-top;display: inline-block;font-size: 18px;">FONT</div>
+    <div style="margin-right: 8px;vertical-align: text-top;display: inline-block;font-size: 28px;">FONT</div>
+    <div style="margin-right: 8px;vertical-align: text-top;display: inline-block;font-size: 38px;">FONT</div>
+    <div style="margin-right: 8px;vertical-align: text-top;display: inline-block;font-size: 14px;">FONT</div>
+</div>
+
+<hr/>
+
+<div style="font-size: 38px;height: 350px;">
+    <img src="../images/11.png" alt="" style="vertical-align: text-top;display: inline-block;"/>
+    <div style="margin-right: 8px;vertical-align: text-top;display: inline-block;font-size: 18px;">FONT</div>
+    <div style="margin-right: 8px;vertical-align: text-top;display: inline-block;font-size: 28px;">FONT</div>
+    <div style="margin-right: 8px;vertical-align: text-top;display: inline-block;font-size: 38px;">FONT</div>
+    <div style="margin-right: 8px;vertical-align: text-top;display: inline-block;font-size: 14px;">FONT</div>
+</div>
+
+<hr>
+
+<h3>关于table:</h3>
+<p>在table没设置table-layout:fixed时,如果只设置了table的宽度,在单元格没设置width的情况下,在单元格没内容时,单元格相对于table均分.在单元格有内容时,每个单元格都维持了一个相同的padding-left与padding-right,如果此时还想让table均分,需要在table上设置table-layout:fixed;</p>
+<p>在table没设置table-layout:fixed,只设置了单元格的宽度,没设置table的宽度时,设置了宽度的单元格维持设置的宽度,没设置的维持相同的padding-left与padding-right</p>
+<table style="width: 300px;height: 50px;-ms-word-break: break-all;word-break: break-all;">
+    <tbody>
+    <tr>
+        <td style=""></td>
+        <td style=""></td>
+        <td style=""></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<table style="width: 300px;-ms-word-break: break-all;word-break: break-all;">
+    <tbody>
+    <tr>
+        <td style="">1111</td>
+        <td style="">22222222222222222222222222222222222222222222222222222222</td>
+        <td style="">33333333333</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<table style="-ms-word-break: break-all;word-break: break-all;">
+    <tbody>
+    <tr>
+        <td style="width: 80px;">1111</td>
+        <td style="">22222222222222222222222222222222222222222222222222222222</td>
+        <td style="width: 30px;">33333333333</td>
+    </tr>
+    </tbody>
+</table>
+<br><br>
+<p>在没设置table-layout:fixed时,如果只设置了table的宽度,如果单元格设置了宽度,table没设置table-layout:fixed时,设置了宽度的单元格维持设置的宽度,没设置宽度的单元格维持一个相同的的padding-left与padding-right,此时的table的width只是一个max-width,但不等同,因为它不会随着其内容的增减而增减,而是当其它单元格占用的空间过多时它会相应的收缩,与其它单元格维持一个相同的padding-left与padding-right</p>
+<p>在没设置table-layout:fixed时,如果只设置了table的宽度,如果单元格设置了宽度,table设置了table-layout:fixed时,如果单元格没设置宽度,表现跟table没设置table-layout:fixed时一样,如果单元格设置了宽度,则维持设置的宽度,如果没设置宽度,如果第一个单元格设置了宽度,则没设置宽度的单元格按照第一个单元格的宽度来,否则没设置宽度的单元格会均分剩下空间</p>
+<table style="width: 300px;-ms-word-break: break-all;word-break: break-all;">
+    <tbody>
+    <tr>
+        <td style="width: 80px;">1111</td>
+        <td style="">22222222222222222222222222222222222222222222222222222222</td>
+        <td style="width: 30px;">33333333333</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<table style="table-layout: fixed;width: 300px;-ms-word-break: break-all;word-break: break-all;">
+    <tbody>
+    <tr>
+        <td style="width: 80px;">1111</td>
+        <td style="">22222222222222222222222222222222222222222222222222222222</td>
+        <td style="width: 30px;">33333333333</td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<table style="table-layout: fixed;width: 300px;-ms-word-break: break-all;word-break: break-all;">
+    <tbody>
+    <tr>
+        <td style="">1111</td>
+        <td style="">22222222222222222222222222222222222222222222222222222222</td>
+        <td style="width: 30px;">33333333333</td>
+    </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<div style="width: 250px;">
+    <span>
+        <img src="../images/11.png" alt="" style="max-width: 100%;width: 300px;">
+    </span>
+</div>
+
+<hr>
 
 
+<p>display:flex和display:inline-flex的区别不在于其container本身的block和inline的差异,而在于其item是否是block level box和inline level box的区别</p>
+<div style="display: inline-flex;height: 200px;"></div>
 
+<hr>
 
+<div style="display:flex">
 
+    <!-- flex item: block child -->
+    <div id="item1">block</div>
 
+    <!-- flex item: floated element; floating is ignored -->
+    <div id="item2" style="float: left;">float</div>
+
+    <!-- flex item: anonymous block box around inline content -->
+    anonymous item 3
+
+    <!-- flex item: inline child -->
+    <span>
+        item 4
+        <!-- flex items do not split around blocks -->
+        <div id=not-an-item>item 4</div>
+        item 4
+    </span>
+</div>
+<hr>
+<p>A flex item establishes a new formatting context for its contents. The type of this formatting context is determined by its display value, as usual. However, flex items themselves are flex-level boxes, not block-level boxes: they participate in their container’s flex formatting context, not in a block formatting context.</p>
+<p>一个伸缩子盒子为它的内容建立了一个新的格式化上下文,格式上下文的类型由它的display值决定,一般情况下,伸缩子盒子是伸缩级盒子,不是块级盒.它们处在他们包含块的伸缩排版上下文下,而不是一个块级排版上下文下</p>
+<div style="display: flex;">
+    <div style="width: 150px;height: 150px;display: table;">
+        <div style="display: table-cell;height: 100px;"></div>
+        <div style="display: table-cell;height: 100px;"></div>
+    </div>
+    <div style="width: 150px;height: 150px;display: block;">
+        <div style="height: 100px;"></div>
+        <div style="height: 100px;"></div>
+    </div>
+    <div style="width: 150px;height: 150px;">
+        <div style="height: 100px;"></div>
+        <div style="height: 100px;"></div>
+    </div>
+    <div style="width: 150px;height: 150px;position: absolute;">
+        <div style="height: 100px;"></div>
+        <div style="height: 100px;"></div>
+    </div>
+    <div style="width: 150px;height: 150px;display: table;">
+        <div style="display: table-cell;height: 100px;"></div>
+        <div style="display: table-cell;height: 100px;"></div>
+    </div>
+</div>
+
+<hr style="margin-top: 45px;">
+
+<p>Some values of display trigger the creation of anonymous boxes around the original box. It’s the outermost box—the direct child of the flex container box—that becomes a flex item. For example, given two contiguous child elements with display: table-cell, the anonymous table wrapper box generated around them [CSS21] becomes the flex item.</p>
+<p>一些display值会触发在原先的子盒子外面创建一个匿名的盒子,它是最外层的并且是这个伸缩包含块的直接子伸缩盒,例如,给两个连续的子元素以一个table-cell的display属性,就会在这些table-cell的外围生成一个匿名的table容器盒子,并且这个table容器盒子就是伸缩子盒子</p>
+<p>解释: 在flexbox中,flex item是flex container的布局单元格,flex item处于这个伸缩排版上下文中,而flex item下的上下文却是由flex item的display值决定的,在某些情况下,由于某些display值会导致在原先的flex item外围创建一个匿名的盒子,因此此时原先的flex item就不是现在的flex item了,而是那个生成的匿名子容器盒.</p>
+<p><b>然而浏览器实现貌似并不是如此</b>: http://people.mozilla.org/~dholbert/tests/flexbox/compat_tests/table-cell-in-flex-container-1.html</p>
+<p>In the case of flex items with display: table, the table wrapper box becomes the flex item, and the order and align-self properties apply to it. The contents of any caption boxes contribute to the calculation of the table wrapper box’s min-content and max-content sizes. However, like width and height, the flex longhands apply to the table box as follows: the flex item’s final size is calculated by performing layout as if the distance between the table wrapper box’s edges and the table box’s content edges were all part of the table box’s border+padding area, and the table box were the flex item.</p>
+<p>一个display:table的flex item,它的table wrapper box变成了flex item,并且order和align-self属性应用在了它上面,一些caption box的内容参与了table wrapper box的最小内容尺寸和最大内容尺寸的计算,然而,像width和height,flex的普通写法被应用于table box: flex item的最终大小由table wrapper box之间的间距和table box的内容区域已经所有的border+padding区域计算出来,table box是一个flex item</p>
+
+<hr>
+
+<p>An absolutely-positioned child of a flex container does not participate in flex layout. However, it does participate in the reordering step (see order), which has an effect in their painting order.</p>
+<p>伸缩包含块下一个绝对定位性质的子盒子是不参与伸缩布局的,然而,它却参与了reordering step</p>
+<div style="display: flex;position: relative;">
+    <div style="width: 150px;height: 150px;position: absolute;right: 0;top: 0;">1</div>
+    <div style="width: 150px;height: 150px;">2</div>
+    <div style="width: 150px;height: 150px;">3</div>
+</div>
+<p>The static position of an absolutely-positioned child of a flex container is determined such that the child is positioned as if it were the sole flex item in the flex container, assuming both the child and the flex container were fixed-size boxes of their used size.</p>
+<hr>
+<p>
+    The CSS align-content property aligns a flex container's lines within the flex container when there is extra space on the cross-axis.
+    <br>
+    This property has no effect on single line flexible boxes.
+</p>
+<div style="display: flex;align-content:center;flex-flow: row wrap;height: 400px;">
+    <div style="width: 150px;height: 100px;"></div>
+    <div style="width: 150px;height: 100px;"></div>
+    <div style="width: 150px;height: 100px;"></div>
+    <div style="width: 150px;height: 100px;"></div>
+</div>
+<div style="display: flex;align-content:center;flex-flow: row wrap;height: 400px;">
+    <div style="width: 150px;height: 100px;"></div>
+    <div style="width: 150px;height: 100px;"></div>
+    <div style="width: 150px;height: 100px;"></div>
+    <div style="width: 150px;height: 100px;"></div>
+    <div style="width: 150px;height: 100px;"></div>
+</div>
+<hr>
+<p>The margins of adjacent flex items do not collapse.Auto margins absorb extra space in the corresponding dimension and can be used for alignment and to push adjacent flex items apart; see Aligning with auto margins.</p>
+<div style="height: 200px;display: flex;">
+    <div style="width: 100px;height: 100px;margin: auto;"></div>
+    <div style="width: 100px;height: 100px;"></div>
+</div>
+
+<hr>
+
+<p>Percentage margins and paddings on flex items are always resolved against their respective dimensions; unlike blocks, they do not always resolve against the inline dimension of their containing block.</p>
+<span style="font-style: italic;">Note: This behavior is currently disputed, and might change in a future version of this specification to match the behavior of blocks.</span>
+<p>这不是一个标准的规范,还在讨论中,这段规范的意思是说,flex item的百分比margin和padding,是相当于flex item自身的,而不是包含块</p>
+<p><b>然而浏览器实现貌似并不是如此</b></p>
+<div style="display: flex;height: 200px;">
+    <div style="width: 100px;height: 100px;margin-left: 50%;"></div>
+    <div style="width: 150px;height: 100px;"></div>
+</div>
+
+<hr>
+<p>Flex items paint exactly the same as inline blocks [CSS21], except that order-modified document order is used in place of raw document order, and z-index values other than auto create a stacking context even if position is static.</p>
+<p>Descendants that are positioned outside a flex item still participate in any stacking context established by the flex item.</p>
+<p>重点是: 非auto的z-index值能在flex item上创建一个堆叠上下文,甚至它的position值是static时</p>
+<div style="position: relative;display: flex;">
+    <div style="width: 150px;height: 150px;z-index: 9;"></div>
+    <div style="width: 100px;height: 100px;position: absolute;left: 0;top: 0;"></div>
+    <div style="width: 150px;height: 150px;"></div>
+    <div style="width: 100px;height: 100px;position: absolute;left: 160px;top: 0;"></div>
+</div>
+
+<hr>
+<p>Specifying visibility:collapse on a flex item causes it to become a collapsed flex item, producing an effect similar to visibility:collapse on a table-row or table-column: the collapsed flex item is removed from rendering entirely, but leaves behind a "strut" that keeps the flex line’s cross-size stable. Thus, if a flex container has only one flex line, dynamically collapsing or uncollapsing items is guaranteed to have no effect on the flex container’s cross size and won’t cause the rest of the page’s layout to "wobble". Flex line wrapping is re-done after collapsing, however, so the cross-size of a flex container with multiple lines might or might not change.
+    <br>
+    Though collapsed flex items aren’t rendered, they do appear in the formatting structure. Therefore, unlike on display:none items [CSS21], effects that depend on a box appearing in the formatting structure (like incrementing counters or running animations and transitions) still operate on collapsed items.</p>
+<p>当给一个flex item一个visibility:collapse时,这个折叠的flex item将会从渲染中移除</p>
+<p><b>然而浏览器并没有这样实现</b></p>
+<div style="display: flex;height: 200px;">
+    <div style="width: 150px;height: 150px;"></div>
+    <div style="width: 150px;height: 150px;visibility: collapse;"></div>
+    <div style="width: 150px;height: 150px;visibility: collapse;"></div>
+    <div style="width: 150px;height: 150px;"></div>
+</div>
+<div style="display: flex;flex-flow: row wrap;: 200px;">
+    <div style="width: 150px;height: 150px;"></div>
+    <div style="width: 150px;height: 150px;"></div>
+    <div style="width: 150px;height: 150px;visibility: collapse;"></div>
+    <div style="width: 150px;height: 150px;"></div>
+    <div style="width: 150px;height: 150px;"></div>
+    <div style="width: 150px;height: 150px;"></div>
+    <div style="width: 150px;height: 150px;visibility: collapse;"></div>
+    <div style="width: 150px;height: 150px;visibility: collapse;"></div>
+    <div style="width: 150px;height: 150px;"></div>
+</div>
+<div style="display: flex;flex-flow: column wrap;">
+    <div style="width: 150px;height: 150px;"></div>
+    <div style="width: 150px;height: 150px;visibility: collapse;"></div>
+    <div style="width: 150px;height: 150px;visibility: collapse;"></div>
+    <div style="width: 150px;height: 150px;"></div>
+</div>
+
+<hr>
+
+<p>分别看下row-reverse和column-reverse的定义,可以看出关键在于start的点和end的点交换位置了,这样理解,就很容易记忆了:</p>
+<p>Same as row, except the main-start and main-end directions are swapped.</p>
+<p>Same as column, except the main-start and main-end directions are swapped.</p>
+
+<hr>
+
+<p>关于-reverse,有这么一句话: Note: The reverse values do not reverse box ordering: like writing-mode and direction [CSS3-WRITING-MODES], they only change the direction of flow. Painting order, speech order, and sequential navigation orders are not affected.</p>
+<p>意思是说,-reverse并没有反转盒子的排序,它只是改变了流的方向,Painting order, speech order以及sequential navigation orders没有受影响.<br />后面的几个order倒不用理解,只要知道,-reverse只是改变了流的方向.拿speech order来说,这意味着屏幕阅读器在识别时,依然按照没有reverse时的方向阅读,拿painting order来说,就是painting时依然是按照没有reverse时的方向painting,这也就意味着,它不会影响之前的painting行为</p>
+
+<hr>
+
+<p>The flex-wrap property controls whether the flex container is single-line or multi-line, and the direction of the cross-axis, which determines the direction new lines are stacked in.</p>
+<p>flex-wrap属性控制一个伸缩包含块是单行的还是多行的,和包含块的cross-axis的方向.也就是控制的一个新行它所堆叠的方向</p>
+
+<hr>
+
+<p>This also affects the painting order [CSS21], exactly as if the flex items were reordered in the source document.</p>
+<p>关于order的解释有这么句话,意思是order属性会影响flex item的painting order</p>
+
+<hr>
+<p>定义了flex: auto之后的flex item,会平分剩余空间,而其平分则是在当前flex line上进行的,flex item在没有flex:auto之前在哪个flex line上,平分时亦是在这个flex line上进行: </p>
+<div style="display: flex;flex-flow: row wrap;width: 300px;">
+    <div style="width: 80px;height: 100px;"></div>
+    <div style="width: 80px;height: 100px;"></div>
+    <div style="width: 80px;height: 100px;"></div>
+    <div style="width: 80px;height: 100px;"></div>
+</div>
+<br>
+<br>
+<div style="display: flex;flex-flow: row wrap;width: 300px;">
+    <div style="flex: auto;width: 80px;height: 100px;"></div>
+    <div style="flex: auto;width: 80px;height: 100px;"></div>
+    <div style="flex: auto;width: 80px;height: 100px;"></div>
+    <div style="flex: auto;width: 80px;height: 100px;"></div>
+</div>
+
+<hr>
+
+<h1 style="color: #000;"><strong style="color: #ff0000;">疑问</strong>: 当flex item的flex basis远远超过flex container的宽度时,在平分负空间时,为什么分配后flex item的flex basis加起来仍然恒等于flex container下的flex line的宽度,当flex line不足以放下经分配后的flex item时,就会按照flex line的总宽度来按比例给flex item平均分配</h1>
+
+<div style="height: 200px;display: flex;">
+    <div style="height: 100px;width: 1000px;flex-shrink: 1;">dsadasdasdasdad</div>
+    <div style="height: 100px;width: 1000px;flex-shrink: 2;">dsadsadsadasdsadsadasdas</div>
+</div>
+
+<hr>
+
+<div style="display: flex;height: 200px;">
+    <div style="flex: initial;">哈哈哈哈哈哈哈哈哈哈哈哈</div>
+    <div style="flex: initial;">哈哈哈哈哈哈哈哈哈哈哈哈</div>
+    <div style="flex: initial;margin-top: auto;margin-left: auto;">哈哈哈哈哈哈哈哈哈哈哈哈</div>
+</div>
+
+<hr>
+
+<div style="display: flex;height: 200px;">
+    <div style="flex: 50%;"></div>
+    <div style="flex: 50%;"></div>
+</div>
+
+<hr>
+
+<div style="display: flex;height: 200px;">
+    <div style="flex-basis: content;">dsadsadasdada</div>
+    <div style="flex-basis: content;">dasdsadsadasda</div>
+</div>
+
+<hr>
+
+<div style="line-height: 200px;">
+    <p style="line-height: 100px;">文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字</p>
+</div>
+
+<style type="text/css" scoped>
+    @media all and (max-width: 600px) {
+        #D-150123-1{
+            margin-top: 15px;
+            width: 150px;
+            height: 150px;
+        }
+    }
+</style>
+<div id="D-150123-1"></div>
+
+<div style="overflow: auto;margin-top: 15px;">
+    <textarea cols="30" rows="10" data-hasbgclr="false" style="margin: 15px;-webkit-appearance: none;font-size: 18px;" contenteditable="true"></textarea>
+    <div style="-webkit-appearance: textarea;width: 150px;height: 100px;margin: 15px;" contenteditable="true"></div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;">
+    <p>The justify-content property aligns flex items along the main axis of the current line of the flex container. This is done after any flexible lengths and any auto margins have been resolved
+        <br>
+        也就是说,auto margin和伸缩的长度的优先级比justify-content的优先级更高
+    </p>
+    <div style="display: flex;justify-content: flex-end;height: 200px;">
+        <div style="width: 100px;height: 100px;margin-right: auto;margin-left: auto;"></div>
+    </div>
+</div>
 
 </body>
 <script src="../js/product-bgcolor.js"></script>

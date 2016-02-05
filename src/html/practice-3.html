@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * { background-color: rgba(255,0,0,.2); }
+        * * { background-color: rgba(0,255,0,.2); }
+        * * * { background-color: rgba(0,0,255,.2); }
+        * * * * { background-color: rgba(255,0,255,.2); }
+        * * * * * { background-color: rgba(0,255,255,.2); }
+        * * * * * * { background-color: rgba(255,255,0,.2); }
+    </style>
+</head>
+<body>
+    <q>哈哈哈</q>
+    <center style="width: 200px;">哈哈哈哈哈哈哈哈哈</center>
+    <hr/>
+    <p>用css控制input中value的大小写</p>
+    <input type="text" style="background-color: transparent;text-transform: uppercase;"/>
+
+    <img src="http://photos.tuchong.com/365997/f/7679150.jpg" alt="" id="D-151227-1">
+    <style type="text/css" scoped>
+        #D-160102-1{
+            margin-top: 15px;
+            overflow: hidden;
+            border: 1px solid #000000;
+        }
+        #D-160102-1 > div{
+            margin-right: 15px;
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            background-color: #333333;
+        }
+        #D-160102-2:nth-child(n){
+            background-color: #ffff00;
+        }
+    </style>
+    <div id="D-160102-1">
+        <div></div>
+        <div id="D-160102-2"></div>
+        <div></div>
+    </div>
+    <div></div>
+    <script>
+//        navigator.geolocation.getCurrentPosition(function (position) {
+//            console.log(position);
+//        }, function (error) {
+//            console.log(error.message);
+//        });
+
+(function () {
+
+    var img = document.getElementById('D-151227-1');
+
+    img.onload = function () {
+        document.body.appendChild(convertImageToCanvas(img));
+    };
+
+    function convertImageToCanvas(image) {
+        var canvas = document.createElement("canvas");
+        canvas.width = image.naturalWidth;
+        canvas.height = image.naturalHeight;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+
+        return canvas;
+    }
+
+    // Converts canvas to an image
+    function convertCanvasToImage(canvas) {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        return image;
+    }
+})();
+
+
+    </script>
+</body>
+</html>

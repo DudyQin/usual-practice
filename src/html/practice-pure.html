@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="../css/pure-release-0.6.0/base.css"/>
     <link rel="stylesheet" href="../css/pure-release-0.6.0/grids.css"/>
     <link rel="stylesheet" href="../css/pure-release-0.6.0/grids-responsive.css"/>
     <link rel="stylesheet" href="../css/pure-release-0.6.0/practice-pure.css"/>
+    <link rel="stylesheet" href="../css/pure-release-0.6.0/forms.css"/>
 </head>
-<body>
+<body style="padding-bottom: 200px;">
 
 <img class="pure-img" src="../images/11.png">
 
@@ -16,8 +18,113 @@
     <div class="pure-u-1-3"><p>Thirds</p></div>
     <div class="pure-u-1-3"><p>Thirds</p></div>
     <div class="pure-u-1-3"><p>Thirds</p></div>
+    <div class="pure-u-1-3"><p>Thirds</p></div>
+    <div class="pure-u-1-3"><p>Thirds</p></div>
+    <div class="pure-u-1-3"><p>Thirds</p></div>
+    <div class="pure-u-1-3"><p>Thirds</p></div>
+    <div class="pure-u-1-3"><p>Thirds</p></div>
+    <div class="pure-u-1-3"><p>Thirds</p></div>
     <div class="pure-u"><p>Thirds</p></div>
 </div>
+
+<div style="margin-top: 15px;">
+    <input type="number"/>
+</div>
+
+<hr style="margin-top: 15px;margin-bottom: 15px;border-width: 0;height: 15px;background-color: #ff0000;" data-hasbgclr="false"/>
+<p>利用flex消除inline-block间距方法，虽然不是真正的消除。当父元素定义display:flex时，子元素即使是定义的inline-block，也会被渲染成block，但是它又会像inline-block一样水平排列，因为flex下的子元素默认如此</p>
+<div style="overflow: auto;display: flex;">
+    <div style="width: 150px;height: 150px;display: inline-block;"></div>
+    <div style="width: 150px;height: 150px;display: inline-block;"></div>
+    <div style="width: 150px;height: 150px;display: inline-block;"></div>
+    <div style="width: 150px;height: 150px;display: inline-block;"></div>
+</div>
+
+<div class="pure-g" style="margin-top: 15px;overflow: auto;">
+    <div class="pure-u-1 pure-u-md-1-3">1</div>
+    <div class="pure-u-1 pure-u-md-1-3">2</div>
+    <div class="pure-u-1 pure-u-md-1-3">3</div>
+</div>
+
+<hr style="margin-top: 15px;margin-bottom: 15px;border-width: 0;height: 15px;background-color: #ff0000;" data-hasbgclr="false"/>
+<form class="pure-form" data-childHasbgclr="false" data-hasbgclr="false">
+    <fieldset>
+        <legend>A compact inline form</legend>
+
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <input type="color" placeholder="color">
+        <input type="search" placeholder="search">
+        <input type="file" placeholder="file">
+
+        <label>
+            <input type="checkbox"> Remember me
+        </label>
+
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+</form>
+
+<hr style="margin-top: 15px;margin-bottom: 15px;border-width: 0;height: 15px;background-color: #ff0000;" data-hasbgclr="false"/>
+
+<form class="pure-form pure-form-stacked" data-childHasbgclr="false" data-hasbgclr="false">
+    <fieldset>
+        <legend>A Stacked Form</legend>
+
+        <label>Email</label>
+        <input type="email" placeholder="Email">
+
+        <label>Password</label>
+        <input type="password" placeholder="Password">
+
+        <label>State</label>
+        <select>
+            <option>AL</option>
+            <option>CA</option>
+            <option>IL</option>
+        </select>
+
+        <label class="pure-checkbox">
+            <input type="checkbox"> Remember me
+        </label>
+
+        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+    </fieldset>
+</form>
+
+<hr style="margin-top: 15px;margin-bottom: 15px;border-width: 0;height: 15px;background-color: #ff0000;" data-hasbgclr="false"/>
+
+<form class="pure-form pure-form-aligned" data-childHasbgclr="false" data-hasbgclr="false">
+    <fieldset>
+        <div class="pure-control-group">
+            <label>Username</label>
+            <input type="text" placeholder="Username">
+        </div>
+
+        <div class="pure-control-group">
+            <label>Password</label>
+            <input type="password" placeholder="Password">
+        </div>
+
+        <div class="pure-control-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Email Address">
+        </div>
+
+        <div class="pure-control-group">
+            <label>Supercalifragilistic Label</label>
+            <input type="text" placeholder="Enter something here...">
+        </div>
+
+        <div class="pure-controls">
+            <label class="pure-checkbox">
+                <input type="checkbox"> I've read the terms and conditions
+            </label>
+
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
+</form>
 
 <script src="../js/product-bgcolor.js"></script>
 </body>

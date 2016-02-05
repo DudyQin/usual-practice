@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    </style>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+</head>
+<body style="padding-bottom: 200px;">
+<!--<form id="form1">-->
+    <!--<input type="radio" name="a"/><br>-->
+    <!--<input type="radio" name="a"/><br>-->
+    <!--<input type="radio" name="a"/><br>-->
+    <!--<input type="text" size="25" maxlength="40" style="display: block;width: 500px;" value="" required /><br>-->
+    <!--<input type="date"/><br>-->
+    <!--<input type="text"/><br>-->
+    <!--<input type="email"/><br>-->
+    <!--<input type="url"/><br>-->
+    <!--<input type="number" minlength="0" maxlength="50" step="10"/><br/>-->
+    <!--<input type="text"pattern="\d+"/><br/>-->
+    <!--<input type="hidden" name="b"/><br/>-->
+    <!--<input type="color"/>-->
+    <!--<input type="submit"/>-->
+<!--</form>-->
+
+<!--<div style="width: 100%;margin-top: 15px;">-->
+    <!--<iframe name='iframe1' src="../html-various/150628-1.html" frameborder="0" style="width: 100%;height: 200px;"></iframe>-->
+    <!--<script>-->
+        <!--window.onload = function(){-->
+            <!--frames['iframe1'].document.designMode = 'on';-->
+<!--//            frames['iframe1'].document.execCommand('italic', false, null);-->
+            <!--document.forms[0].elements['b'].value = frames['iframe1'].document.body.innerHTML-->
+        <!--}-->
+    <!--</script>-->
+<!--</div>-->
+
+<!--<div id="D-150629-1" style="height: 20px;background-color: #ffff00;">-->
+    <!--<div class="item"></div>-->
+    <!--<div class="item"></div>-->
+    <!--<div class="item"></div>-->
+<!--</div>-->
+
+<div style="height: 30px;margin-top: 15px;background-color: #ffff00;" id="D-150701-1"></div>
+
+<ul>
+    <li>
+        <p>setTimeout和setInterval的运行机制是，将指定的代码移出本次执行，等到下一轮Event Loop时，再检查是否到了指定时间。如果到了，就执行对应的代码；如果不到，就等到再下一轮Event Loop时重新判断。这意味着，setTimeout指定的代码，必须等到本次执行的所有代码都执行完，才会执行。</p>
+        <p>Event Loop包括当前所有的同步任务和任务队列里的任务，setTimeout会在当前Event Loop中的所有任务执行完后，在下一个Event Loop时才会去执行，而还有的另一个机制是在下一轮Event Loop时还会判断是否到了setTimeout指定的时间，如果到了，就执行，如果没到，就会等到再下一个Event Loop时去执行</p>
+    </li>
+</ul>
+<p>jQuery的$选择器每$一下，就会创建一个新的元素实例，所以在这个元素中，当用jQuery选择器为一个元素ele添加一个属性后，再声明一个ele去输出这个那个属性时就报undefined了，而js不会，js元素下保存的属性，会一直都在</p>
+<div style="background-color: #ffff00;" id="D-150817-1">
+    <p>JS代码：</p>
+    <pre>
+   (function () {
+        var ele = $('#D-150817-1');
+//        var ele = document.getElementById('D-150817-1');
+        ele.aaaaa = 1;
+        console.log(ele.aaaaa);
+    })();
+
+    (function () {
+        var ele = $('#D-150817-1');
+//        var ele = document.getElementById('D-150817-1');
+        console.log(ele.aaaaa);
+    })();
+    </pre>
+</div>
+<br/>
+<p>将不同条件下的处理程序放在一个对象下面，而其键则是其对应的id，而调用时则是传入其对应的id，而免去了if else这种写法</p>
+<div style="margin-top: 15px;overflow: auto;" id="D-150904-1">
+    <a href="javascript:;" style="width: 100px;height: 100px;display: inline-block;background-color: #000000;color: #ffffff;" event-id="1">1</a>
+    <a href="javascript:;" style="width: 100px;height: 100px;display: inline-block;background-color: #000000;color: #ffffff;" event-id="2">2</a>
+    <a href="javascript:;" style="width: 100px;height: 100px;display: inline-block;background-color: #000000;color: #ffffff;" event-id="3">3</a>
+    <a href="javascript:;" style="width: 100px;height: 100px;display: inline-block;background-color: #000000;color: #ffffff;" event-id="4">4</a>
+</div>
+<!--<img src="https://www.google.com/logos/doodles/2015/first-day-of-fall-2015-northern-hemisphere-6003706315145216-hp.gif" alt=""/>-->
+<a href="http://javascript:alert(1);">XSS注入</a>
+<hr/>
+<p>可以定义一个不存在的img路径，然后给其绑定一个onerror事件，就能触发这个error事件，但有另一个知识点是绑定事件的代码，包括load事件，都必须紧挨着放在图片加载之后，因为有一种情况是img已经响应完成了，但此时load或error事件却还没绑定，也就是说都已经load或error了，load或error事件才绑上，当然也就触发不了了。这也说明了事件是在特定的时刻才会被触发的。因此load或error只能紧挨着图片的请求之后，或者内联绑在html上。
+  对了，把事件代理在父元素上可不可以呢，不行，因为load没有冒泡机制，无法事件代理
+</p>
+<!--<script>-->
+    <!--$('body').on('load', function () {-->
+        <!--alert(1);-->
+    <!--});-->
+<!--</script>-->
+<img src="dasadsa" alt="" id="D-151011-1" />
+<!--<script>-->
+    <!--console.log(document.getElementById('D-151011-1'))-->
+    <!--document.getElementById('D-151011-1').onerror = function () {-->
+        <!--alert(1);-->
+    <!--};-->
+<!--</script>-->
+<!--<script src="" id="D-151011-2" onerror="alert(2)"></script>-->
+<hr/>
+
+<p>使用window.onerror能够将window下抛出的异常忽略：</p>
+<pre>
+window.onerror = function () {
+    return true;
+};
+</pre>
+
+<hr/>
+
+<p>通过抛出一个自定义错误，可以阻止其后的代码执行：</p>
+<pre>
+(function () {
+    $('body').animate({'opacity':'0'}, function () {
+        setTimeout(function () {
+            $('body').animate({'opacity':'1'}, function () {
+                setTimeout(function () {
+                    $('body').animate({'opacity':'0'}, function () {
+                        setTimeout(function () {
+                            $('body').animate({'opacity':'1'});
+                        },1000)
+                    });
+                },1000)
+            })
+        },1000)
+    });
+    err();
+    function err(){
+        throw new Error('there has a error');
+    }
+    alert(1);
+})();
+</pre>
+
+<hr/>
+<br/><br/>
+<!--<img src="../images/11.png" alt="" id="D-151020-1"/>-->
+<!--<textarea name="" id="D-151020-2" cols="30" rows="10"></textarea>-->
+<a href="" id="D-151020-1" style="margin-bottom: 15px;width: 100px;height: 100px;display: block;background-color: #000000;color: #ffffff;">drag element</a>
+<a href="" id="D-151020-2" style="width: 100px;height: 100px;display: block;background-color: #ff000f;color: #ffffff;">target element</a>
+<br/><br/>
+<hr/>
+
+<p>hashchange事件并不属于history API，因为它并没有参与历史状态的管理，触发hashchange事件，只要通过location.hash改变其hash就好了</p>
+<pre>
+    window.addEventListener('hashchange', function () {
+        console.log('hash change')
+    },false);
+</pre>
+<p>history API在实际中的应用，首先是可以用在翻页中，当用户点击翻页按钮时，通过pushState方法改变当前页url，触发popstate事件，获取到之前通过pushState保存的数据，调用局部刷新操作，实现翻页。而当把当前url分享出去时，用户打开分享链接后，由于url中带有第几页的参数，服务端在接收到这个url的请求后，会把当前页返回给前端，之后的翻页则都是通过history API来实现的了</p>
+
+<hr/>
+<p>发布订阅模式的简单实现：</p>
+<pre>
+var PubSub = {handlers : {}};
+PubSub.on = function (eventType, handler) {
+    if(!(eventType in this.handlers)){
+        this.handlers[eventType] = [];
+    }
+    this.handlers[eventType].push(handler);
+};
+PubSub.emit = function (eventType) {
+    var handlerArgs = Array.prototype.slice.call(arguments, 1);
+    for(var i=0; i<'this.handlers'[eventType].length; i++){
+        this.handlers[eventType][i].apply(this, handlerArgs);
+    }
+    return this;
+};
+</pre>
+
+<hr/>
+
+<canvas id="D-151023-1" width="150" height="150"></canvas>
+
+<hr/>
+<script>
+    function D1510311launchFullscreen(element) {
+        if(element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if(element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if(element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen();
+        } else if(element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    }
+</script>
+<p>html5全屏api，可以全屏一个页面，也可以全屏一个元素：</p>
+<div id="D-151031-1" style="background-color: #ff0000;font-size: 18px;color: #ffffff;">123456</div>
+<button type="button" onclick="D1510311launchFullscreen(document.documentElement)">full screen page</button>
+<button type="button" onclick="D1510311launchFullscreen(document.getElementById('D-151031-1'))">full screen a div</button>
+
+<hr/>
+
+<p>html5调起电脑摄像头api</p>
+<pre>
+    if(navigator.getUserMedia) { // 标准的API
+        navigator.getUserMedia(videoObj, function(stream) {
+            video.src = stream;
+            video.play();
+        }, errBack);
+    } else if(navigator.webkitGetUserMedia) { // WebKit 核心的API
+        navigator.webkitGetUserMedia(videoObj, function(stream){
+            video.src = window.webkitURL.createObjectURL(stream);
+            video.play();
+        }, errBack);
+    }
+</pre>
+<canvas id="D-151031-2"></canvas>
+<video src="" id="D-151031-3"></video>
+<script>
+    // 添加事件监听器
+//    window.addEventListener("DOMContentLoaded", function() {
+//        // 获取元素，创建配置
+//        var canvas = document.getElementById("D-151031-2"),
+//                context = canvas.getContext("2d"),
+//                video = document.getElementById("D-151031-3"),
+//                videoObj = { "video": true },
+//                errBack = function(error) {
+//                    console.log("Video capture error: ", error.code);
+//                };
+//
+//        // 添加视频监听器
+//        if(navigator.getUserMedia) { // 标准的API
+//            navigator.getUserMedia(videoObj, function(stream) {
+//                video.src = stream;
+//                video.play();
+//            }, errBack);
+//        } else if(navigator.webkitGetUserMedia) { // WebKit 核心的API
+//            navigator.webkitGetUserMedia(videoObj, function(stream){
+//                video.src = window.webkitURL.createObjectURL(stream);
+//                video.play();
+//            }, errBack);
+//        }
+//    }, false);
+</script>
+
+<hr/>
+
+<div id="D-151220-1" style="height: 30px;background-color: #000000;"></div>
+<!--<script>-->
+    <!--document.onclick = function () {-->
+        <!--console.log('document,false');-->
+    <!--};-->
+    <!--document.addEventListener('click', function () {-->
+        <!--console.log('document,true');-->
+    <!--}, true);-->
+    <!--document.getElementById('D-151220-1').addEventListener('click', function () {-->
+        <!--console.log('btn');-->
+    <!--}, false);-->
+<!--</script>-->
+
+<hr>
+
+<!--<div id="D-151222-1">-->
+    <!--<iframe src="http://souche.com/" frameborder="0" style="width: 800px;height: 400px;"></iframe>-->
+<!--</div>-->
+<!--<script>-->
+    <!--(function () {-->
+        <!--var iframe = $('#D-151222-1').find('iframe');-->
+        <!--console.log(iframe);-->
+    <!--})();-->
+<!--</script>-->
+</body>
+<script>
+//    (function () {
+//        var dtd = $.Deferred(); // 新建一个Deferred对象
+//        var wait = function(dtd){
+//            var tasks = function(){
+//                alert("执行完毕！");
+//                dtd.resolve(); // 改变Deferred对象的执行状态
+//            };
+//
+//            setTimeout(tasks,5000);
+//            return dtd.promise(); // 返回promise对象
+//        };
+//        var dtd2 = $.Deferred();
+//        var wait2 = function (dtd2) {
+//            var tasks = function () {
+//                alert('执行完毕2');
+//                dtd2.resolve();
+//            };
+//
+//            setTimeout(tasks, 6000);
+//            return dtd2.promise();
+//        };
+//        var d = wait(dtd); // 新建一个d对象，改为对这个对象进行操作
+//        var d2 = wait2(dtd2); // 新建一个d2对象，改为对这个对象进行操作
+//        $.when(d,d2).done(function(){ alert("成功了！"); }).fail(function(){ alert("出错了"); });
+//        //d.resolve(); // 此时，这个语句是无效的
+//    })();
+//    (function () {
+//        $.Deferred(wait).done(function () {
+//            alert('回调函数执行成功');
+//        }).fail(function () {
+//            alert('回调函数执行失败');
+//        });
+//        function wait(dtd){
+//            setTimeout(function () {
+//                alert('setTimeout执行');
+//                dtd.resolve();
+//            },3000);
+//            return dtd.promise();
+//        }
+//    })();
+//    (function () {
+//        var dtd = $.Deferred();
+//        var wait = function (dtd) {
+//            var tasks = function () {
+//                alert('执行完毕！');
+//                dtd.resolve();
+//            };
+//            setTimeout(tasks,5000);
+//        };
+//        dtd.promise(wait);
+//        wait.done(function () {
+//            alert('成功了');
+//        }).fail(function () {
+//            alert('失败了');
+//        });
+//        wait(dtd);
+//    })();
+//    (function () {
+//        var socket = new WebSocket('ws://127.0.0.1:12010/updates');
+//        socket.onopen = function () {
+//            setInterval(function () {
+//                if(socket.bufferedAmount == 0){
+//                    socket.send(getUpdateData());
+//                }
+//            }, 50);
+//        };
+//        socket.onmessage = function (event) {
+//
+//        }
+//    })();
+    (function () {
+        var PubSub = {handlers : {}};
+        PubSub.on = function (eventType, handlers) {
+            if(!(eventType in this.handlers)){
+                this.handlers[eventType] = [];
+            }
+            this.handlers.eventType.push(handlers);
+            return this;
+        };
+        PubSub.emit = function (eventType) {
+            var handlerArgs = Array.prototype.slice.call(arguments, 1);
+            for(var i=0; i<this.handlers[eventType].length; i++){
+                this.handlers[eventType].apply(this, handlerArgs);
+            }
+            return this;
+        };
+//        PubSub.on('alert', function () {
+//            alert(1);
+//        });
+//        PubSub.emit('alert');
+    })();
+//    (function () {
+//        var ele = document.getElementById('D-151023-1');
+//        var context = ele.getContext && ele.getContext('2d');
+//        console.log(context);
+//    })();
+//    (function () {
+//        history.pushState({name:"qinyebo"}, 'qinyebo page', 'practice-3.html');
+//    })();
+    (function () {
+        var drag = document.getElementById('D-151020-1');
+        var dragTarget = document.getElementById('D-151020-2');
+        drag.addEventListener('dragstart', function () {
+            console.log('drag start');
+        },false);
+        drag.addEventListener('drag', function () {
+            console.log('draging');
+        },false);
+        drag.addEventListener('dragend', function () {
+            console.log('drag end');
+        },false);
+        dragTarget.addEventListener('dragenter', function () {
+            console.log('is drag enter');
+        },false);
+        dragTarget.addEventListener('dragover', function () {
+            console.log('drag in over');
+        },false);
+        dragTarget.addEventListener('drop', function () {
+            console.log('drag is in target');
+        },false);
+        dragTarget.addEventListener('dragleave', function () {
+            console.log('drag is leave target');
+        },false);
+    })();
+
+//    dasdasasd
+//    (function () {
+//        var xmldom = document.implementation.createDocument('', 'root', null);
+//        var child = xmldom.createElement('child');
+//        xmldom.documentElement.appendChild(child);
+//        var serializer = new XMLSerializer();
+//        var xml = serializer.serializeToString(xmldom);
+//        console.log(xml);
+//    })();
+//    //读取同域下另一个url下的自己的cookie
+//    (function () {
+//        $('body').append($('<iframe src="http://localhost:63342/usual-practice/src/html-various/150103-1.html" style="width: 100%;height: 300px;" id="D-151005-1"></iframe>'));
+//        $('#D-151005-1').on('load', function () {
+//            console.log($(this)[0].contentDocument.cookie);
+//            $(this)[0].contentDocument.cookie = 'b=' + +new Date();
+//            console.log($(this)[0].contentDocument.cookie);
+//        });
+//    })();
+//    (function () {
+//        var req, database;
+//        req = indexedDB.open('admin');
+//        req.onerror = function (event) {
+//            console.log(event.target.errorCode);
+//        };
+//        req.onsuccess = function (event) {
+//            database = event.target.result;
+//            console.log(database);
+//        }
+//    })();
+</script>
+<script>
+    (function () {
+        var handle = {};
+        handleFunc('1', function () {
+            this.style.backgroundColor = '#ff0000';
+        });
+        handleFunc('2', function () {
+            this.style.backgroundColor = '#ff4400';
+        });
+        handleFunc('3', function () {
+            this.style.backgroundColor = '#333300';
+        });
+        handleFunc('4', function () {
+            this.style.backgroundColor = '#432322';
+        });
+        function handleFunc(eventId, func){
+            handle[eventId] = func;
+        }
+        var btns = document.getElementById('D-150904-1').getElementsByTagName('a');
+        for(var i=0; i<btns.length; i++){
+            btns[i].onclick = function () {
+                if(typeof handle[this.getAttribute('event-id')] == 'function'){
+                    handle[this.getAttribute('event-id')].apply(this);
+                }
+            }
+        }
+    })();
+
+//    (function () {
+////        var ele = $('#D-150817-1');
+////        var ele = document.getElementById('D-150817-1');
+//        var ele = document.querySelectorAll('#D-150817-1');
+//        ele.aaaaa = 1;
+//        console.log(ele.aaaaa);
+//    })();
+
+//    (function () {
+////        var ele = $('#D-150817-1');
+////        var ele = document.getElementById('D-150817-1');
+//        var ele = document.querySelectorAll('#D-150817-1');
+//        console.log(ele.aaaaa);
+//    })();
+
+//(function(){
+//    var a = Array.prototype.slice.apply(arguments, [0])
+//    console.log(a instanceof Array)
+//})(1,2)
+
+//(function(){
+//
+//    function func(callback){
+//        for(var i=0; i<10000; i++){
+//            console.log(i);
+//        }
+//        if(typeof callback === 'function'){
+//            callback();
+//        }
+//    }
+//
+//    func(function(){
+//        alert('do callback'.toUpperCase());
+//    });
+//
+//})()
+
+
+//Function.prototype.before = function( beforefn ){
+//    var __self = this; // 保存原函数的引用
+//    return function(){ // 返回包含了原函数和新函数的"代理"函数
+//        beforefn.apply( this, arguments ); // 执行新函数，修正this
+//        return __self.apply( this, arguments ); // 执行原函数
+//    }
+//};
+//
+//Function.prototype.after = function( afterfn ){
+//    var __self = this;
+//    return function(){
+//        var ret = __self.apply( this, arguments );
+//        afterfn.apply( this, arguments );
+//        return ret;
+//    }
+//};
+//
+//var func = function(){
+//    console.log( 2 );
+//};
+//
+//func = func.before(function(){
+//    console.log( 1 );
+//}).after(function(){
+//    console.log( 3 );
+//});
+//
+//func();
+
+//Function.prototype.uncurrying = function () {
+//    var self = this;
+//    return function() {
+//        var obj = Array.prototype.shift.call( arguments );
+//        return self.apply( obj, arguments );
+//    };
+//};
+//
+//var push = Array.prototype.push.uncurrying();
+//
+//(function(){
+//    push( arguments, 4 );
+////    console.log( arguments ); // 输出：[1, 2, 3, 4]
+//})( 1, 2, 3 );
+
+//for ( var i = 0, fn, ary = [ 'push', 'shift', 'forEach' ]; fn = ary[ i++ ]; ){
+//    console.log(i)
+////    Array[ fn ] = Array.prototype[ fn ].uncurrying();
+//};
+//var obj = {
+//    "length": 3,
+//    "0": 1,
+//    "1": 2,
+//    "2": 3
+//};
+//
+//Array.push( obj, 4 ); // 向对象中添加一个元素
+//console.log( obj.length ); // 输出：4
+//var first = Array.shift( obj ); // 截取第一个元素
+//console.log( first ); // 输出：1
+//console.log( obj ); // 输出：{0: 2, 1: 3, 2: 4, length: 3}
+//
+//Array.forEach( obj, function( i, n ){
+//    console.log( n ); // 分别输出：0, 1, 2
+//});
+
+//var fn = function(){
+//    var i = 10;
+//    return function(){
+//        console.log(i);
+//    }
+//}
+
+//var timeChunk = function( ary, fn, count ){
+//    var obj,
+//            t;
+//    var len = ary.length;
+//    var start = function(){
+//        for ( var i = 0; i < Math.min( count || 1, ary.length ); i++ ){
+//            var obj = ary.shift();
+//            fn( obj );
+//        }
+//    };
+//    return function(){
+//        t = setInterval(function(){
+//            if ( ary.length === 0 ){ // 如果全部节点都已经被创建好
+//                return clearInterval( t );
+//            }
+//            start();
+//        }, 200 ); // 分批执行的时间间隔，也可以用参数的形式传入
+//    };
+//};
+//
+//var ary = [];
+//for ( var i = 1; i <= 1000; i++ ){
+//    ary.push( i );
+//};
+//var renderFriendList = timeChunk( ary, function( n ){
+//    console.log(n)
+//    var div = document.createElement( 'div' );
+//    div.innerHTML = n;
+//    document.body.appendChild( div );
+//}, 8 );
+//renderFriendList();
+
+//(function(){
+//    var Person = function(name){
+//        this.instance = null;
+//        this.name = name;
+//    }
+//
+//    Person.prototype.sayName = function(){
+//        alert(this.name);
+//    }
+//
+//    Person.getInstance = (function(){
+//        var instance = null;
+//        return function(name){
+//            if(!instance){
+//                instance = new Person(name)
+//            }
+//            return instance;
+//        }
+//    })();
+//
+//    var a = Person.getInstance('qyb');
+//    var b = Person.getInstance('qyb');
+//    console.log(a === b);
+//})();
+
+//    策略模式：
+//    现有如下需求：单位需要一个计算年终奖的程序，这个每个人的年终奖是根据每个人所获绩效的等级来计算的，不同的绩效对应不同的奖金，比如，A绩效时，奖金就是个人月工资乘以3，以此类推。如果是平常的做法，可能会是写一连串的if判断，如果绩效等于多少，工资就是多少。在if判断里面写上对应的表达式，但是这样有一些缺点，一是以后每加一个绩效就得加一个判断和表达式，二是表达式不应该和条件判断耦合在一起。这里有个做法就是策略模式，首先是有一个策略对象，这个策略对象会将计算年终奖的算法封装起来，然后会有一个使用算法的上下文，这个上下文为算法提供数据
+//    var cucalate = {
+//        a : function(Wages){
+//            return Wages  * 3;
+//        },
+//        b : function(Wages){
+//            return Wages * 2;
+//        },
+//        c : function(Wages){
+//            return Wages * 4;
+//        }
+//    }
+//
+//    var useCucalate = function(step, Wages){
+//        return cucalate[step](Wages);
+//    }
+//
+//    console.log(useCucalate('b', 4000));
+
+//    document.getElementsByClassName('regist')[0].onsubmit = function(){
+//        alert(1)
+//    }
+
+//"use strict";
+//
+//    window.a = 1;
+//    console.log(a)
+
+//    console.log(document.getElementById('form1').elements['a'])
+
+</script>
+<script>
+//    window.getWindow = function(c){
+//        console.log(c);
+//        console.log(c.a());
+//    };
+//
+//    window.getWindow2 = function(){
+//        console.log(222222222222);
+//    };
+
+//    (function(){
+//        var ele = document.getElementById('D-150629-1').getElementsByClassName('item');
+//
+//        setBdr(ele);
+//
+//        function setBdr(ele){
+//            ele[0].style.border = '40px solid #ff0000';
+//        }
+//        function LogName(i){
+//            console.log(i);
+//            alert(i);
+//        }
+//
+//        var a = new LogName(ele);
+
+//    })();
+
+//(function(){
+//
+//    function createFunctions() {
+//        var result = new Array();
+//        for (var i = 0; i < 10; i++) {
+//            result[i] = function () {
+//                return i;
+//            };
+//        }
+//        return result;
+//    }
+//    createFunctions().forEach(function(value, index){
+//        console.log(value());
+//    });
+//})();
+
+//setTimeout(f,0)指定的任务，最早也要到下一次Event Loop才会执行
+//    setTimeout(function() {
+//        console.log("Timeout");
+//    }, 0);
+//
+//    function a(x) {
+//        console.log("a() 开始运行");
+//        b(x);
+//        console.log("a() 结束运行");
+//    }
+//
+//    function b(y) {
+//        console.log("b() 开始运行");
+//        console.log("传入的值为" + y);
+//        console.log("b() 结束运行");
+//    }
+//
+//    console.log("当前任务开始");
+//    a(42);
+//    console.log("当前任务结束");
+
+    // 当前任务开始
+    // a() 开始运行
+    // b() 开始运行
+    // 传入的值为42
+    // b() 结束运行
+    // a() 结束运行
+    // 当前任务结束
+// Timeout
+
+//(function(){
+//    var $ele = $('#D-150701-1');
+//    (function(){
+//        $ele.on('aa', function(){
+//            $ele.css('background-color','#ff0000');
+//        });
+//        $ele.trigger('aa');
+//
+//        setTimeout(function(){
+//            alert(1);
+//        },0);
+//
+//        for(var i=0; i<30000; i++){
+//            console.log(i);
+//        }
+//    })();
+//})();
+
+//var checkStatus;
+//
+//var element = new Image();
+//// var element = document.createElement('any');
+//element.__defineGetter__('id', function() {
+//    checkStatus = 'on';
+//    alert(1);
+//});
+//
+//setInterval(function() {
+//    checkStatus = 'off';
+//    console.log(element);
+//    console.clear();
+//    document.querySelector('#devtool-status').innerHTML = checkStatus;
+//}, 1000)
+
+//chrome.tabs.query({url:'chrome-devtools://*/*'}, function(tabs){
+//    if (tabs.length > 0){
+//        //devtools is open
+//        alert(1);
+//    }
+//});
+
+</script>
+<!--<script src="../json/2.json"></script>-->
+</html>

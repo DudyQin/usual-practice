@@ -1,0 +1,11 @@
+getWindow({
+  "a":function(){
+    console.log(11111111111);
+  }
+});
+
+getWindow2();
+
+function shenmin(){
+  console.log(333333333333333);
+}

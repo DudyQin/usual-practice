@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <hr/>
+    <p>NodeJS中的模块分为核心模块和文件模块，核心模块又分为javascript编写的核心模块和c/c++编写的核心模块。
+        <br>
+        <br>
+        javascript核心模块查找要比文件模块的查找要快，原因在于javascript核心模块是被编译为c/c++放在内存中了的，因此在加载的过程中是直接从内存中读取然后再编译为javascript代码的，而文件模块则是像以类似原型链查找的方式去一级级查找的
+        <br/>
+        <br/>
+        而c/c++核心模块则是直接编译为二进制文件放在内存中了的，加载的时候就可以直接执行了，不要经历标识符定位等过程。速度明显比文件模块快。比javascript核心模块也要快
+        <br/>
+        <br/>
+        我们一般把javascript核心模块和c/c++核心模块分别称为核心模块和内建模块
+    </p>
+    <hr/>
+</body>
+</html>

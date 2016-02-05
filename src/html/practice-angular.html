@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en" ng-app="firstApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/foundation.css">
+    <script src="../js/practice-angular/angular.min.js"></script>
+    <script src="../js/practice-angular/angular-route.min.js"></script>
+    <script src="../js/practice-angular/controllers.js"></script>
+    <style type="text/css">
+        *{
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body style="margin-left: auto;margin-right: auto;width: 640px;">
+
+
+<h1 class="container" ng-controller="firstController">{{msg}}</h1>
+<div class="container" ng-controller="controller-150726">
+    <button ng-click="add(1)">ADD</button>
+    <button ng-click="subtract(1)">SUBSTRACT</button>
+    <p>{{counter}}</p>
+</div>
+<ul class="list container" ng-controller="controller-150726-2">
+    <li>{{mark}}</li>
+    <li>{{this.person}}</li>
+    <li>{{person}}</li>
+    <li>{{person['name']}}</li>
+    <li>{{person.age}}</li>
+</ul>
+
+<span class="container title-small">手动解析表达式：</span>
+
+<div class="container" ng-controller="controller-150726-3">
+    <input type="text" ng-model="expr"/>
+    <ul class="list">
+        <li>{{value}}</li>
+        <li>{{newVal}}</li>
+        <li>{{oldVal}}</li>
+    </ul>
+</div>
+
+<div ng-controller="controller-150726-4" class="container">
+    <input ng-model="to" type="email" placeholder="Recipient" />
+    <textarea ng-model="emailBody"></textarea>
+    <pre>{{previewText}}</pre>
+    <p>{{emailBody}}}</p>
+    <p>{{123 | currency}}</p>
+    <p>{{2015 | date:'medium'}}</p>
+    <p>{{[12, 34, 21, 24, 35] | filter:2}}</p>
+    <p>{{(['dsa', 'Adsdsd', 'sda', 'Dadsf'] | filter:isUppercase).indexOf('Dadsf')}}</p>
+    <p>{{[].push(1, 2, 3)}}</p>
+    <p>{{ ({"a" : "1", "b" : 2, "c" : 3} | json ).indexOf('a') > 0}}</p>
+    <p>{{[1,2,3,4,5] | limitTo:2}}</p>
+    <p>{{[1,2,3,4,5] | limitTo:-2}}</p>
+    <p>{{'DASHILHSD' | lowercase}}</p>
+    <p>{{12233322 | number}}</p>
+    <p>{{12.3232 | number:2}}</p>
+    <p>{{[{"name" : 'd'},{"name" : 's'},{"name" : "b"}] | orderBy : 'name'}}</p>
+    <p>{{[{"name" : 'd'},{"name" : 's'},{"name" : "b"}] | orderBy : 'name':true}}</p>
+    <p>{{'dsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasad' +
+        'dsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasad' +
+        'dsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasaddsadsadasdasad' | uppercase}}</p>
+
+    <form action="">
+        <input type="text" required />
+        <input type="text" ng-minlength="5" />
+        <input type="email" name="email" ng-model="user.email" />
+        <button type="button">提交</button>
+    </form>
+
+</div>
+
+<!--<div class="content">-->
+    <!--<div class="row">-->
+        <!--<div class="large-12 columns">-->
+            <!--<label>Your email</label>-->
+            <!--<input type="email"-->
+                   <!--placeholder="Email"-->
+                   <!--name="email"-->
+                   <!--ng-model="signup.email"-->
+                   <!--ng-minlength="3"-->
+                   <!--ng-maxlength="20" required />-->
+            <!--<div class="error"-->
+                 <!--ng-show="signup_form.email.$dirty && signup_form.email.$invalid">-->
+                <!--<small class="error"-->
+                       <!--ng-show="signup_form.email.$error.required">-->
+                    <!--Your email is required.-->
+                <!--</small>-->
+                <!--<small class="error"-->
+                       <!--ng-show="signup_form.email.$error.minlength">-->
+                    <!--Your email is required to be at least 3 characters-->
+                <!--</small>-->
+                <!--<small class="error"-->
+                       <!--ng-show="signup_form.email.$error.email">-->
+                    <!--That is not a valid email. Please input a valid email.-->
+                <!--</small>-->
+                <!--<small class="error"-->
+                       <!--ng-show="signup_form.email.$error.maxlength">-->
+                    <!--Your email cannot be longer than 20 characters-->
+                <!--</small>-->
+            <!--</div>-->
+            <!--<input ng-class="{error: signup_form.name.$dirty && signup_form.name.$invalid}"-->
+                   <!--type="text"-->
+                   <!--placeholder="Name"-->
+                   <!--name="name"-->
+                   <!--ng-model="signup.name"-->
+                   <!--ng-minlength="3"-->
+                   <!--ng-maxlength="20" required ng-focus />-->
+            <!--<div class="error"-->
+                 <!--ng-show="signup_form.name.$dirty && signup_form.name.$invalid && !signup_form.name.$focused"></div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<button href="http://google.com" type="submit">Click me</button>
+
+<div ng-style="{color:'red'}">ng-style测试</div>
+<div ng-style="style">ng-style测试</div>
+
+<!--<my-directive></my-directive>-->
+<br/>
+<!--<div my-directive></div>-->
+<br/>
+<span>无论有多少种方式可以声明指令，我们坚持使用属性方式，因为它有比较好的跨浏览器兼容性：</span>
+<!--<div class="my-directive"></div>-->
+<!--directive:my-directive-->
+
+<div ng-controller="controller-150730-1">
+    <p>We can access: {{ rootProperty }}
+        and {{ parentProperty }}</p>
+    <div ng-controller="controller-150730-2">
+        <p>
+            We can access:
+            {{ rootProperty }} and
+            {{ parentProperty }} and
+            {{ childProperty }}
+        </p>
+        <p>{{ fullSentenceFromChild }}</p> </div>
+</div>
+
+<!--<input type="text" ng-model="myUrl" />-->
+<!--<div my-directive-->
+     <!--some-attr="{{ myUrl }}"-->
+     <!--my-link-text="Click me to go to Google">-->
+<!--</div>-->
+<!--<br/><span>{{ myUrl }}</span><br/>-->
+<!--<span>{{ myUrl }}</span><br/>-->
+<!--<span>{{ myUrl }}</span>-->
+
+<form action="">
+    <input type="text"/>
+    <button>BUTTON</button>
+</form>
+<p>ng-href指令，它会提供一个超链接，这个链接将处于禁用状态，直到ng-href="someExpresiion"中的表达式被调用并且返回一个值</p>
+<a ng-href="http://www.baidu.com">LINK</a>
+
+<!--<input type="text" ng-model="someProperty" placeholder="TypetoEnable">-->
+<!--<button ng-model="button" ng-disabled="!someProperty">AButton</button>-->
+<br/>
+<br/>
+
+<div ng-controller="controller-150731-1">
+    <textarea ng-disabled="isDisabled">Wait5seconds</textarea>
+</div>
+
+<input type="text" ng-model="somePropertyD1507311"><br/>
+<input type="text" ng-readonly="somePropertyD1507311" value="Some text here"/>
+
+<label>someProperty = {{somePropertyD1507312}}</label>
+<input type="checkbox" ng-checked="somePropertyD1507312" ng-init="somePropertyD1507312 = true" ng-model="somePropertyD1507312">
+
+<label>Select Two Fish:</label>
+<input type="checkbox"
+       ng-model="somePropertyD1507313"><br/>
+<select>
+    <option>One Fish</option>
+    <option ng-selected="somePropertyD1507313">Two Fish</option>
+</select>
+
+<p>子控制器是复制而非引用someBareValue。而 JavaScript对象要么是值复制要么是引用复制。字符串、数字和布尔型变量是值复制。数组、对象和函数则是引用复制。</p>
+<p>如果将模型对象的某个属性设置为字符串，它会通过引用进行共享，因此在子$scope中修改属性也会修改父$scope中的这个属性</p>
+<p>使用ng-include时AngularJS会自动创建一个子作用域。如果你想使用某个特定的作用域，例如ControllerA的作用域，必须在同一个DOM元素上添加ng-controller="ControllerA"指令，这样当模板加载完成后，不会像往常一样从外部作用域继承并创建一个新的子作用域</p>
+
+<div ng-if="1 + 1 === 2">Won't see this DOM node, not even in the source code</div>
+<div ng-if="1 + 2 !== 2">Won't see this DOM node, not even in the source code</div>
+<div ng-if="1 + 2 == 2">Won't see this DOM node, not even in the source code</div>
+
+<ul ng-controller="controller-150731-2">
+    <li ng-repeat="item in list">
+        {{item}}
+    </li>
+</ul>
+
+<div ng-init="greeting = 'hello world'">
+    <p ng-cloak>{{greeting}}</p>
+</div>
+<br/>
+<P>我们应该始终用ngModel来绑定$scope上一个数据模型内的属性，而不是$scope上的属性，这可以避免在作用域或后代作用域中发生属性覆盖</P>
+
+<div ng-controller="controller-150731-3">
+    <input type="text" ng-model="model.name"/>
+    <input type="text" value="{{model.name}}"/>
+    <br/>
+    <p>在这个例子中，直到input标签上的blur事件触发之前user.name都不会更新（也就是说，当input失去焦点时更新）</p>
+    <input type="text" ng-model="model.age" ng-model-options="{updateOn: 'blur'}"/>
+    <input type="text" value="{{model.age}}"/>
+    <p>debounce用于指定一个时间值，以毫秒为单位，它表示触发更新前等待的时间</p>
+    <input type="text" ng-model="model.height" ng-model-options="{debounce: 1000}"/>
+    <input type="text" value="{{model.height}}"/>
+</div>
+
+<div ng-controller="controller-150731-4">
+    <input type="text" ng-model="model.x" ng-change="model.change()"/>
+    <p>{{model.val}}</p>
+</div>
+
+<div ng-controller="controller-150803-1">
+    <div d150803-directive1 ng-click="refresh()"></div>
+</div>
+
+<hr/>
+
+<div ng-controller="controller-150803-2">
+    <p>指令中的scope属性的值为true时，表示将在指令上新建一个作用域，但可以继承父$scope。指令中的scope属性的值为{}时，表示指令会形成一个隔离的作用域，与外接没有任何关系，也就没法继承父$scope：</p>
+    <p d150803-directive2></p>
+    <p d150803-directive3></p>
+</div>
+
+<hr/>
+
+<p>模板树可能又大又深，但有一点需要注意，尽管元素可以被多个指令所支持或修饰，这些指令本身的模板中也可以包含其他指令，但只有属于最高优先级指令的模板会被解析并添加到模板树中。这里有一个建议，就是将包含模板的指令和添加行为的指令分离开来。如果一个元素已经有一个含有模板的指令了，永远不要对其用另一个指令进行修饰。只有具有最高优先级的指令中的模板会被编译。</p>
+
+<hr/>
+
+<div ng-controller="controller-150804-1">
+    <button type="button" ng-click="showMsg('dasdasdas')">BUTTON</button>
+</div>
+
+<hr/>
+
+<p>如果没有明确的声明，AngularJS会假定参数名称就是依赖的名称</p>
+
+<hr/>
+
+<p>AngularJS提供了显式的方法来明确定义一个函数在被调用时需要用到的依赖关系。通过这种方法声明依赖，即使在源代码被压缩、参数名称发生改变的情况下依然能够正常工作。
+
+    可以通过$inject属性来实现显式注入声明的功能。函数对象的$inject属性是一个数组，数组元素的类型是字符串，它们的值就是需要被注入的服务的名称。</p>
+
+<hr/>
+
+<p>在定义一个AngularJS的对象时，行内声明的方式允许我们直接传入一个参数数组而不是一个函数。数组的元素是字符串，它们代表的是可以被注入到对象中的依赖的名字，最后一个参数就是依赖注入的目标函数对象本身。</p>
+<pre>
+angular.module('myApp')
+    .controller('MyController', ['$scope', 'greeter', function($scope, greeter) {
+}]);
+</pre>
+
+<hr/>
+
+<p>
+    1. 服务提供了一种能在应用的整个生命周期内保持数据的方法，它能够在控制器之间进行通信，并且能保证数据的一致性。
+    <br>
+    2. 服务提供了把与特定功能相关联的方法集中在一起的接口
+    <br/>
+    3. 服务的工厂函数用来生成一个单例的对象或函数，这个对象或函数就是服务，它会存在于应用的整个生命周期内
+</p>
+<hr/>
+<p>在自定义服务之前注入所有的AngularJS内置服务，这是约定俗成的规则。</p>
+<hr/>
+<p>
+    是否可以一直使用.factory()方法来代替.provider()呢？答案取决于是否需要用AngularJS的.config()函数来对.provider()方法返回的服务进行额外的扩展配置。同其他创建服务的方法不同，config()方法可以被注入特殊的参数。
+    <br/>
+    如果希望在config()函数中可以对服务进行配置，必须用provider()来定义服务</p>
+<hr/>
+<p>通常情况下，可以通过value()来注册服务对象或函数，用constant()来配置数据。</p>
+<div style="height: 250px;"></div>
+
+</body>
+</html>

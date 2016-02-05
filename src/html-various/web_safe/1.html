@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #D-151114-1[value^="a"]{
+            background-image: url(http://www.souche.com);
+        }
+    </style>
+</head>
+<body>
+
+<p>当input开头的value值等于a时会发起一次对http://www.souche.com的请求</p>
+<input type="text" id="D-151114-1" value=""/>
+
+<br/>
+<br/>
+<br/>
+
+<p>在a的href里内联进一段js，这段js引入了一个js：</p>
+<a href="javascript:void(document.body.appendChild(document.createElement('script')).src = '1.js');">内联执行</a>
+
+<hr/>
+
+<a href="javascript:var _eval=eval;eval=function(x){console.log(document.cookie);_eval(x)};">函数劫持</a>
+<br/>
+<a href="javascript:eval('alert(1)');">函数劫持</a>
+
+<hr>
+
+<p>控制台中修改onclick事件处理程序的代码,相当于会增加一个新的处理程序,比如刚开始是alert(1),改成alert(2)后,原先的alert(1)依然会执行,但这个alert(2)也会执行</p>
+<div style="height: 30px;background-color: #000000;" onclick="alert(1)"></div>
+
+</body>
+</html>

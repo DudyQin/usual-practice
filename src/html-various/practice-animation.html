@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #D-150803-1{
+            overflow: hidden;
+            background-color: #cccccc;
+        }
+        #D-150803-1 > div{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 10px solid #333;
+            border-left-color: #ffffff;
+            box-sizing: border-box;
+            -webkit-animation: D1508031Ani 1.1s infinite linear;
+        }
+        @-webkit-keyframes D1508031Ani {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes D-151211-1-loading-1{
+            0% {
+                z-index: 0;
+            }
+            50% {
+                z-index: 1;
+            }
+            100% {
+                z-index: 1;
+            }
+        }
+        @keyframes D-151211-1-loading-2{
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes D-151211-1-loading-3{
+            from{}
+            to{}
+        }
+        @keyframes D-151211-1-loading-4{
+            0% {
+                transform: rotate(180deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .D-151211-1 .loading {
+            width: 100px;
+            height: 100px;
+            background: #ff0;
+            border-radius: 100%;
+            position: relative;
+        }
+        .D-151211-1 .loading-1, .D-151211-1 .loading-2, .D-151211-1 .loading-3, .D-151211-1 .loading-4 {
+            width: 100px;
+            height: 50px;
+            background: #f00;
+            border-radius: 100px 100px 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: 50% 100%;
+        }
+        .D-151211-1 .loading-2, .D-151211-1 .loading-4 {
+            background: #f0f;
+        }
+        .D-151211-1 .loading-3, .D-151211-1 .loading-4 {
+            transform: rotate(180deg);
+            /*animation-timing-function: linear;*/
+        }
+        .D-151211-1 .loading-1 {
+            animation: D-151211-1-loading-1 5s;
+            animation-timing-function: linear;
+        }
+        .D-151211-1 .loading-2 {
+            animation: D-151211-1-loading-2 5s;
+            animation-timing-function: linear;
+        }
+        .D-151211-1 .loading-3 {
+            animation: D-151211-1-loading-3 5s;
+            animation-timing-function: linear;
+        }
+        .D-151211-1 .loading-4 {
+            animation: D-151211-1-loading-4 5s;
+            animation-timing-function: linear;
+        }
+
+    </style>
+</head>
+<body>
+
+    <p>animation-delay为负值的意思是：动画依然不延迟执行，只是将动画开始的时间设置为开始之后相应秒数时</p>
+    <hr style="overflow: hidden;"/>
+    <p>巧用border做loading动画：</p>
+    <div id="D-150803-1">
+        <div></div>
+    </div>
+
+    <div class="D-151211-1">
+        <div class="loading">
+            <div class="loading-1"></div>
+            <div class="loading-2"></div>
+            <div class="loading-3"></div>
+            <div class="loading-4"></div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

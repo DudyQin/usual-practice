@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" style="padding-bottom: 150px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="../frame-work/sementicUI/node_modules/semantic-ui-css/components/reset.css"/>
+    <link rel="stylesheet" href="../frame-work/sementicUI/node_modules/semantic-ui-css/components/icon.css"/>
+    <link rel="stylesheet" href="../frame-work/sementicUI/node_modules/semantic-ui-css/components/label.css"/>
+    <link rel="stylesheet" href="../frame-work/sementicUI/node_modules/semantic-ui-css/components/button.css"/>
+    <style type="text/css">
+        #D-150816-1{
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            min-height: 200px;
+            border: 1px solid;
+            background: #000000;
+        }
+        #D-150816-1:hover{
+            background: '';
+            cursor: pointer;
+        }
+        .D-150816-1.D-150816-2{
+            height: 100px;
+            background-color: #000000;
+        }
+        .D-150816-3.D-150816-3.D-150816-3.D-150816-4{
+            height: 100px;
+            background-color: #ffff00;
+        }
+    </style>
+</head>
+<body style="padding-bottom: 150px;">
+
+<button class="ui button">
+    Follow
+</button>
+
+<br/>
+<hr/>
+<br/>
+
+<div id="D-150816-1"></div>
+
+<br/>
+<hr/>
+<br/>
+
+<div class="ui active button">ACTIVE</div>
+
+<hr/>
+
+<button type="button" class="ui loading loading loading loading loading loading button"></button>
+
+<hr/>
+
+<div class="ui button" tabindex="0">Focusable</div>
+
+<hr/>
+
+<button class="ui primary button">Save</button>
+<button class="ui secondary button">Okay</button>
+
+<hr/>
+
+<button class="ui labeled icon button">
+    <i class="pause icon"></i>
+    Pause
+</button>
+<button class="ui right labeled icon button">
+    <i class="right arrow icon"></i>
+    Next
+</button>
+
+<hr/>
+
+<button class="ui loading button">Loading</button>
+<button class="ui basic loading button">Loading</button>
+<button class="ui primary loading button">Loading</button>
+<button class="ui secondary loading button">Loading</button>
+
+<hr/>
+
+<div class="ui labeled icon loading button">
+    <i class="arrow icon"></i>
+</div>
+<p>多类选择器，只要css中定义的选择器元素中都存在时，都会起作用，而不必元素的选择器就一定得和css中定义的恒一致</p>
+<div class="D-150816-1 D-150816-1 D-150816-1 D-150816-2"></div>
+<p>css中选择器定义为‘.D-150816-3.D-150816-3.D-150816-3.D-150816-4’，但是在多类选择器中，相同的选择器其实是多余的，重复一个选择器的作用仅仅是用来提高这个元素的选择器的优先级，这在某些情况下比较有用，当选择器优先级不够时，而又不想增加另外的选择器，可以选择此方法</p>
+<div class="D-150816-3 D-150816-4"></div>
+
+<div style="margin-top: 15px;overflow: auto;">
+    <div class="ui animated button" tabindex="0">
+        <div class="visible content">Next</div>
+        <div class="hidden content">
+            <i class="right arrow icon"></i>
+        </div>
+    </div>
+    <div class="ui vertical animated button" tabindex="0">
+        <div class="hidden content">Shop</div>
+        <div class="visible content">
+            <i class="shop icon"></i>
+        </div>
+    </div>
+    <div class="ui animated fade button" tabindex="0">
+        <div class="visible content">Sign-up for a Pro account</div>
+        <div class="hidden content">
+            $12.99 a month
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 15px;overflow: auto;">
+    <div class="ui labeled button" tabindex="0">
+        <div class="ui button">
+            <i class="heart icon"></i> Like
+        </div>
+        <a class="ui basic label">
+            2,048
+        </a>
+    </div>
+    <div class="ui left labeled button" tabindex="0">
+        <a class="ui basic right pointing label">
+            2,048
+        </a>
+        <div class="ui button">
+            <i class="heart icon"></i> Like
+        </div>
+    </div>
+    <div class="ui left labeled button" tabindex="0">
+        <a class="ui basic label">
+            1,048
+        </a>
+        <div class="ui icon button">
+            <i class="fork icon"></i>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
